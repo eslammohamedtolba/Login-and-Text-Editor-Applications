@@ -73,16 +73,19 @@ void savefile(fstream& file)
 int main()
 {
     bool state=true;int typemodifys;
+    //this files filemodified to test if the file name exist or not and filecreated to store the file entered if exists or create file in it.
     fstream filemodified;fstream filecreated;
     string file_name;
     cout << "Please enter a file to open for you: ";
     cin >> file_name;
+    //to check if the name of function ends by .txt or not.
     if(file_name.substr(file_name.size()-4,file_name.size()-1)!=".txt"){
         file_name+=".txt";
     }
+    //to test if the name if file exist or not.
     filemodified.open (file_name);
 
-    if (filemodified.fail()){
+    if (filemodified.fail()){ //if the name of file doesn't exist then will create a file in the same folder of main and stored in filecreated.
         string namefile;
         cout<<"please enter the name of the file that will be create\n"<<endl;
         cin>>namefile;
@@ -93,6 +96,7 @@ int main()
         cout << "This is a new file. I created it for you\n";
     }
     else {
+        //if the file name exists then will store it in filecreated
         cout << "This File Already Exists\n";
         filecreated.open (file_name,ios::out);
     }
