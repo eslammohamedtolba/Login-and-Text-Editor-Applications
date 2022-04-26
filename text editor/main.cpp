@@ -89,7 +89,7 @@ int main()
         if(namefile.substr(namefile.size()-4,namefile.size()-1)!=".txt"){
             namefile=namefile+".txt";
         }
-        fstream filemodified;
+        ofstream filemodified;
         filemodified.open(namefile);
         filemodified.close();
         cout << "This is a new file. I created it for you\n";
