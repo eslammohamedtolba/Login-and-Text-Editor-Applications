@@ -10,63 +10,63 @@
 #include <fstream>
 using namespace std;
 
-void add_newtext()
+void add_newtext(ifstream& file)
 {
 
 }
-void displaycontent()
+void displaycontent(ifstream& file)
 {
 
 }
-void emptyfile()
+void emptyfile(ifstream& file)
 {
 
 }
-void encryptcontent()
+void encryptcontent(ifstream& file)
 {
 
 }
-void decryptcontent()
+void decryptcontent(ifstream& file)
 {
 
 }
-void mergetwofiles()
+void mergetwofiles(ifstream& file)
 {
 
 }
-void countwords()
+void countwords(ifstream& file)
 {
 
 }
-void countcharacters()
+void countcharacters(ifstream& file)
 {
 
 }
-void countnumberlines()
+void countnumberlines(ifstream& file)
 {
 
 }
-void searchword()
+void searchword(ifstream& file)
 {
 
 }
-void countrepeatedword()
+void countrepeatedword(ifstream& file)
 {
 
 }
-void turntoupper()
+void turntoupper(ifstream& file)
 {
 
 }
-void turntolower()
+void turntolower(ifstream& file)
 {
 
 }
-void turnfirstcharacter()
+void turnfirstcharacter(ifstream& file)
 {
 
 }
-void savefile()
+void savefile(ifstream& file)
 {
 
 }
@@ -89,9 +89,9 @@ int main()
         if(namefile.substr(namefile.size()-4,namefile.size()-1)!=".txt"){
             namefile=namefile+".txt";
         }
-        ofstream filenamess;
-        filenamess.open(namefile);
-        filenamess.close();
+        ofstream filemodified;
+        filemodified.open(namefile);
+        filemodified.close();
         cout << "This is a new file. I created it for you\n";
     }
     else {
@@ -119,35 +119,35 @@ int main()
         cin>>typemodifys;
         switch(typemodifys)
         {
-        case 1:add_newtext();
+        case 1:add_newtext(filemodified);
             break;
-        case 2:displaycontent();
+        case 2:displaycontent(filemodified);
             break;
-        case 3:emptyfile();
+        case 3:emptyfile(filemodified);
             break;
-        case 4:encryptcontent();
+        case 4:encryptcontent(filemodified);
             break;
-        case 5:decryptcontent();
+        case 5:decryptcontent(filemodified);
             break;
-        case 6:mergetwofiles();
+        case 6:mergetwofiles(filemodified);
             break;
-        case 7:countwords();
+        case 7:countwords(filemodified);
             break;
-        case 8:countcharacters();
+        case 8:countcharacters(filemodified);
             break;
-        case 9:countnumberlines();
+        case 9:countnumberlines(filemodified);
             break;
-        case 10:searchword();
+        case 10:searchword(filemodified);
             break;
-        case 11:countrepeatedword();
+        case 11:countrepeatedword(filemodified);
             break;
-        case 12:turntoupper();
+        case 12:turntoupper(filemodified);
             break;
-        case 13:turntolower();
+        case 13:turntolower(filemodified);
             break;
-        case 14:turnfirstcharacter();
+        case 14:turnfirstcharacter(filemodified);
             break;
-        case 15:savefile();
+        case 15:savefile(filemodified);
             break;
         case 16:state=false;
             break;
