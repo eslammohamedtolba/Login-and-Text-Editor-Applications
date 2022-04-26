@@ -1,4 +1,13 @@
+// FCAI – Programming 1 – 2022 - Assignment 4
+// Program Name: xxxxxx.cpp
+// Last Modification Date: xx/xx/xxxx
+// Author1 and ID and Group: xxxxx xxxxx
+// Author2 and ID and Group: xxxxx xxxxx
+// Author3 and ID and Group: xxxxx xxxxx
+// Teaching Assistant: xxxxx xxxxx
+// Purpose:..........
 #include <bits/stdc++.h>
+#include <fstream>
 using namespace std;
 
 void add_newtext()
@@ -53,7 +62,7 @@ void turntolower()
 {
 
 }
-void turnlastcharacter()
+void turnfirstcharacter()
 {
 
 }
@@ -64,9 +73,30 @@ void savefile()
 int main()
 {
     bool state=true;int typemodifys;
-    /*
-    here we will test if the file entered exist or not
-    */
+    ifstream filemodified;
+    string file_name;
+    cout << "Please enter a file to open for you: ";
+    cin >> file_name;
+    if(file_name.substr(file_name.size()-4,file_name.size()-1)!=".txt"){
+        file_name+=".txt";
+    }
+    filemodified.open (file_name);
+
+    if (filemodified.fail()){
+        string namefile;
+        cout<<"please enter the name of the file that will be create\n"<<endl;
+        cin>>namefile;
+        if(namefile.substr(namefile.size()-4,namefile.size()-1)!=".txt"){
+            namefile=namefile+".txt";
+        }
+        ofstream filenamess;
+        filenamess.open(namefile);
+        filenamess.close();
+        cout << "This is a new file. I created it for you\n";
+    }
+    else {
+        cout << "This File Already Exists\n";
+    }
     while(state){
         cout << "what do you want to do\n"
                 "1- Add new text to the end of the file\n"
@@ -115,14 +145,14 @@ int main()
             break;
         case 13:turntolower();
             break;
-        case 14:turnlastcharacter();
+        case 14:turnfirstcharacter();
             break;
         case 15:savefile();
             break;
         case 16:state=false;
             break;
-        }
         default:
             cout<<"the choice you entered isn't correct ";
+        }
     }
 }
