@@ -90,12 +90,13 @@ int main()
             namefile=namefile+".txt";
         }
         filecreated.open(namefile,ios::out);
-        filecreated.close();
         cout << "This is a new file. I created it for you\n";
     }
     else {
         cout << "This File Already Exists\n";
+        filecreated.open (file_name,ios::out);
     }
+    filecreated<<4<<endl;
     while(state){
         cout << "what do you want to do\n"
                 "1- Add new text to the end of the file\n"
@@ -118,35 +119,35 @@ int main()
         cin>>typemodifys;
         switch(typemodifys)
         {
-        case 1:add_newtext(filemodified);
+        case 1:add_newtext(filecreated);
             break;
-        case 2:displaycontent(filemodified);
+        case 2:displaycontent(filecreated);
             break;
-        case 3:emptyfile(filemodified);
+        case 3:emptyfile(filecreated);
             break;
-        case 4:encryptcontent(filemodified);
+        case 4:encryptcontent(filecreated);
             break;
-        case 5:decryptcontent(filemodified);
+        case 5:decryptcontent(filecreated);
             break;
-        case 6:mergetwofiles(filemodified);
+        case 6:mergetwofiles(filecreated);
             break;
-        case 7:countwords(filemodified);
+        case 7:countwords(filecreated);
             break;
-        case 8:countcharacters(filemodified);
+        case 8:countcharacters(filecreated);
             break;
-        case 9:countnumberlines(filemodified);
+        case 9:countnumberlines(filecreated);
             break;
-        case 10:searchword(filemodified);
+        case 10:searchword(filecreated);
             break;
-        case 11:countwordrepetition(filemodified);
+        case 11:countwordrepetition(filecreated);
             break;
-        case 12:turntoupper(filemodified);
+        case 12:turntoupper(filecreated);
             break;
-        case 13:turntolower(filemodified);
+        case 13:turntolower(filecreated);
             break;
-        case 14:turnfirstcharacter(filemodified);
+        case 14:turnfirstcharacter(filecreated);
             break;
-        case 15:savefile(filemodified);
+        case 15:savefile(filecreated);
             break;
         case 16:state=false;
             break;
