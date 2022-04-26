@@ -73,7 +73,7 @@ void savefile(fstream& file)
 int main()
 {
     bool state=true;int typemodifys;
-    fstream filemodified;
+    fstream filemodified;fstream filecreated;
     string file_name;
     cout << "Please enter a file to open for you: ";
     cin >> file_name;
@@ -89,9 +89,8 @@ int main()
         if(namefile.substr(namefile.size()-4,namefile.size()-1)!=".txt"){
             namefile=namefile+".txt";
         }
-        ofstream filemodified;
-        filemodified.open(namefile);
-        filemodified.close();
+        filecreated.open(namefile,ios::out);
+        filecreated.close();
         cout << "This is a new file. I created it for you\n";
     }
     else {
