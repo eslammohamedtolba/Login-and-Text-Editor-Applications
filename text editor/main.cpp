@@ -1,79 +1,79 @@
 // FCAI – Programming 1 – 2022 - Assignment 4
-// Program Name: xxxxxx.cpp
+// Program Name: editor text application
 // Last Modification Date: xx/xx/xxxx
-// Author1 and ID and Group: xxxxx xxxxx
+// Author1 and ID and Group: Eslam mohamed abdel azim ali, 20211013, group A
 // Author2 and ID and Group: xxxxx xxxxx
 // Author3 and ID and Group: xxxxx xxxxx
-// Teaching Assistant: xxxxx xxxxx
-// Purpose:..........
+// Teaching Assistant: Eng.Afaf Abelmonem
+// Purpose:this application applys some modifications on files that the user enters
 #include <bits/stdc++.h>
 #include <fstream>
 using namespace std;
 
-void add_newtext(ifstream& file)
+void add_newtext(fstream& file)
 {
 
 }
-void displaycontent(ifstream& file)
+void displaycontent(fstream& file)
 {
 
 }
-void emptyfile(ifstream& file)
+void emptyfile(fstream& file)
 {
 
 }
-void encryptcontent(ifstream& file)
+void encryptcontent(fstream& file)
 {
 
 }
-void decryptcontent(ifstream& file)
+void decryptcontent(fstream& file)
 {
 
 }
-void mergetwofiles(ifstream& file)
+void mergetwofiles(fstream& file)
 {
 
 }
-void countwords(ifstream& file)
+void countwords(fstream& file)
 {
 
 }
-void countcharacters(ifstream& file)
+void countcharacters(fstream& file)
 {
 
 }
-void countnumberlines(ifstream& file)
+void countnumberlines(fstream& file)
 {
 
 }
-void searchword(ifstream& file)
+void searchword(fstream& file)
 {
 
 }
-void countrepeatedword(ifstream& file)
+void countwordrepetition(fstream& file)
 {
 
 }
-void turntoupper(ifstream& file)
+void turntoupper(fstream& file)
 {
 
 }
-void turntolower(ifstream& file)
+void turntolower(fstream& file)
 {
 
 }
-void turnfirstcharacter(ifstream& file)
+void turnfirstcharacter(fstream& file)
 {
 
 }
-void savefile(ifstream& file)
+void savefile(fstream& file)
 {
 
 }
 int main()
 {
     bool state=true;int typemodifys;
-    ifstream filemodified;
+    fstream filemodified;
     string file_name;
     cout << "Please enter a file to open for you: ";
     cin >> file_name;
@@ -89,7 +89,7 @@ int main()
         if(namefile.substr(namefile.size()-4,namefile.size()-1)!=".txt"){
             namefile=namefile+".txt";
         }
-        ofstream filemodified;
+        fstream filemodified;
         filemodified.open(namefile);
         filemodified.close();
         cout << "This is a new file. I created it for you\n";
@@ -139,7 +139,7 @@ int main()
             break;
         case 10:searchword(filemodified);
             break;
-        case 11:countrepeatedword(filemodified);
+        case 11:countwordrepetition(filemodified);
             break;
         case 12:turntoupper(filemodified);
             break;
