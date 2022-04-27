@@ -14,7 +14,7 @@ using namespace std;
 void load_file(fstream &filemodified,string &file_name)
 {
     cout<<"please enter the file name to deal with"<<endl;
-    cin >> file_name;
+    getline(cin,file_name);
     //to check if the name of function ends by .txt or not.
     if(file_name.substr(file_name.size()-4,file_name.size()-1)!=".txt"){
         file_name+=".txt";
@@ -120,8 +120,8 @@ void touppercase(string &word)
 void tofirstupper(string &word,string &filecontent)
 {
     string word2=word;
-    word=toupper(word[0]);
-    word+=word2.substr(1,word2.size());
+    word2=word.substr(1,word.size());tolowercase(word2);
+    word=toupper(word[0]);word+=word2;
     filecontent+=word+" ";
 }
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -143,6 +143,7 @@ void countwordrepetition(fstream &file,string file_name)
         }
         file.close();
     }
+    file.close();
     cout<<"the word "<<wordsearch<<" is repeated by "<<repetition<<" times"<<endl;
 }
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -159,6 +160,7 @@ void turntoupper(fstream &file,string file_name)
     touppercase(filecontent);
     file.open(file_name,ios::out);
     file<<filecontent;
+    file.close();
 }
 //------------------------------------------------------------------------------------------------------------------------------------
 void turntolower(fstream &file,string file_name)
@@ -174,6 +176,7 @@ void turntolower(fstream &file,string file_name)
     tolowercase(filecontent);
     file.open(file_name,ios::out);
     file<<filecontent;
+    file.close();
 }
 //-----------------------------------------------------------------------------------------------------------------------------------
 void turnfircharupper(fstream &file,string file_name)
@@ -197,6 +200,7 @@ void turnfircharupper(fstream &file,string file_name)
     file.close();
     file.open(file_name,ios::out);
     file<<filecontent;
+    file.close();
 }
 //-----------------------------------------------------------------------------------------------------------------------------------
 void savefile(fstream &file,string file_name)
@@ -208,25 +212,37 @@ void savefile(fstream &file,string file_name)
           ">>>> ";
     cin>>choice;
     if(choice==1){
-        cout<<"the modifications are applied in the same function :)"<<endl;
+        cout<<"the modifications are applied in the same file :)"<<endl;
     }
     else if(choice==2){
         string newnamefile,newfilecontent,line;fstream newfile;
-        load_file(newfile,newnamefile);
+        cout<<"please enter the file name to deal with"<<endl;cin.ignore();
+        getline(cin,newnamefile);
+        if(newnamefile.substr(newnamefile.size()-4,newnamefile.size()-1)!=".txt")
+        {
+            newnamefile+=".txt";
+        }
+        newfile.open(newnamefile);
+        if (newfile.fail())
+        {
+            newfile.open(newnamefile,ios::out);
+            cout << "This is a new file. I created it for you\n";
+        }
+        newfile.close();
         file.open(file_name,ios::in);
         if(file.is_open())
         {
             while(getline(file,line))
             {
-                cout<<line<<endl;
                 newfilecontent+=line+"\n";
             }
         }
-        cout<<newfilecontent<<endl;
+
         file.close();
         newfile.open(newnamefile,ios::out);
         newfile<<newfilecontent;
         newfile.close();
+        cout<<"the modifications are applied in different file named "<<newnamefile<<" :)"<<endl;
     }
 }
 //------------------------------------------------------------------------------------------------------------------------------------
