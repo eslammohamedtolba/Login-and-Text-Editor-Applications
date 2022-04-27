@@ -8,75 +8,12 @@
 // Purpose:this application applys some modifications on files that the user enters
 #include <bits/stdc++.h>
 #include <fstream>
+#include<cctype>
 using namespace std;
-
-void add_newtext(fstream& file)
+//-----------------------------------------------------------------------------------------------------------------------------------
+void load_file(fstream &filemodified,string &file_name)
 {
-
-}
-void displaycontent(fstream& file)
-{
-
-}
-void emptyfile(fstream& file)
-{
-
-}
-void encryptcontent(fstream& file)
-{
-
-}
-void decryptcontent(fstream& file)
-{
-
-}
-void mergetwofiles(fstream& file)
-{
-
-}
-void countwords(fstream& file)
-{
-
-}
-void countcharacters(fstream& file)
-{
-
-}
-void countnumberlines(fstream& file)
-{
-
-}
-void searchword(fstream& file)
-{
-
-}
-void countwordrepetition(fstream& file)
-{
-
-}
-void turntoupper(fstream& file)
-{
-
-}
-void turntolower(fstream& file)
-{
-
-}
-void turnfirstcharacter(fstream& file)
-{
-
-}
-void savefile(fstream& file)
-{
-
-}
-int main()
-{
-    bool state=true;int typemodifys;
-    //this files filemodified to test if the file name exist or not and filecreated to store the file entered if exists or create file in it.
-    fstream filemodified;fstream filecreated;
-    string file_name;
-    cout << "Please enter a file to open for you: ";
+    cout<<"please enter the file name to deal with"<<endl;
     cin >> file_name;
     //to check if the name of function ends by .txt or not.
     if(file_name.substr(file_name.size()-4,file_name.size()-1)!=".txt"){
@@ -84,23 +21,220 @@ int main()
     }
     //to test if the name if file exist or not.
     filemodified.open (file_name);
+    //if the name of file doesn't exist then will create a file in the same folder of main and stored in filecreated.
+    if (filemodified.fail()){
 
-    if (filemodified.fail()){ //if the name of file doesn't exist then will create a file in the same folder of main and stored in filecreated.
-        string namefile;
-        cout<<"please enter the name of the file that will be create\n"<<endl;
-        cin>>namefile;
-        if(namefile.substr(namefile.size()-4,namefile.size()-1)!=".txt"){
-            namefile=namefile+".txt";
-        }
-        filecreated.open(namefile,ios::out);
+        filemodified.open(file_name,ios::out);
+        filemodified.close();
         cout << "This is a new file. I created it for you\n";
     }
     else {
         //if the file name exists then will store it in filecreated
         cout << "This File Already Exists\n";
-        filecreated.open (file_name,ios::out);
+        filemodified.close();
     }
-    filecreated<<4<<endl;
+
+}
+//-----------------------------------------------------------------------------------------------------------------------------------
+/*
+void fillt_vector(fstream &file,string file_name,vector<string>&veclines)
+{
+    file.open(file_name,ios::in);
+    string line;
+    if(file.is_open()){
+        while(getline(file,line)){
+                veclines.push_back(line);
+        }
+    }
+}
+void fillf_vector(fstream &file,string file_name,vector<string>&veclines)
+{
+    file.open(file_name,ios::in);
+    ostream_iterator<string>out_iterator(file,"\n");
+    copy(veclines.begin(),veclines.end(),out_iterator);
+}
+*/
+//-----------------------------------------------------------------------------------------------------------------------------------
+void add_newtext()
+{
+
+}
+//-----------------------------------------------------------------------------------------------------------------------------------
+void displaycontent()
+{
+
+}
+//-----------------------------------------------------------------------------------------------------------------------------------
+void emptyfile()
+{
+
+}
+//-----------------------------------------------------------------------------------------------------------------------------------
+void encryptcontent()
+{
+
+}
+//-----------------------------------------------------------------------------------------------------------------------------------
+void decryptcontent()
+{
+
+}
+//-----------------------------------------------------------------------------------------------------------------------------------
+void mergetwofiles()
+{
+
+}
+//-----------------------------------------------------------------------------------------------------------------------------------
+void countwords()
+{
+
+}
+//-----------------------------------------------------------------------------------------------------------------------------------
+void countcharacters()
+{
+
+}
+//-----------------------------------------------------------------------------------------------------------------------------------
+void countnumberlines()
+{
+
+}
+//-----------------------------------------------------------------------------------------------------------------------------------
+void searchword()
+{
+
+}
+//-----------------------------------------------------------------------------------------------------------------------------------
+void tolowercase(string &word)
+{
+    for(int i=0;i<word.size();i++){
+        word[i]=tolower(word[i]);
+    }
+}
+void touppercase(string &word)
+{
+    for(int i=0;i<word.size();i++){
+        word[i]=toupper(word[i]);
+    }
+}
+void tofirstupper(string &word,string &filecontent)
+{
+    string word2=word;
+    word=toupper(word[0]);
+    word+=word2.substr(1,word2.size());
+    filecontent+=word+" ";
+}
+//----------------------------------------------------------------------------------------------------------------------------------
+void countwordrepetition(fstream &file,string file_name)
+{
+    file.open(file_name,ios::in);int repetition=0;string wordsearch,line,word;
+    cout<<"what is the word you want to know repetition number of it"<<endl;
+    cin>>wordsearch;tolowercase(wordsearch);
+    if(file.is_open()){
+        while(getline(file,line)){
+            istringstream iss;
+            iss.str(line);
+            while(iss.good()){
+                iss>>word;tolowercase(word);
+                if(word==wordsearch){
+                    repetition++;
+                }
+            }
+        }
+        file.close();
+    }
+    cout<<"the word "<<wordsearch<<" is repeated by "<<repetition<<" times"<<endl;
+}
+//----------------------------------------------------------------------------------------------------------------------------------
+void turntoupper(fstream &file,string file_name)
+{
+    file.open(file_name,ios::in);
+    string filecontent,line;
+    if(file.is_open()){
+        while(getline(file,line)){
+            filecontent+=line+"\n";
+        }
+    }
+    file.close();
+    touppercase(filecontent);
+    file.open(file_name,ios::out);
+    file<<filecontent;
+}
+//------------------------------------------------------------------------------------------------------------------------------------
+void turntolower(fstream &file,string file_name)
+{
+    file.open(file_name,ios::in);
+    string filecontent,line;
+    if(file.is_open()){
+        while(getline(file,line)){
+            filecontent+=line+"\n";
+        }
+    }
+    file.close();
+    tolowercase(filecontent);
+    file.open(file_name,ios::out);
+    file<<filecontent;
+}
+//-----------------------------------------------------------------------------------------------------------------------------------
+void turnfircharupper(fstream &file,string file_name)
+{
+    file.open(file_name,ios::in);
+    string filecontent,line,word;
+    if(file.is_open()){
+        while(getline(file,line))
+        {
+            istringstream iss;
+            iss.str(line);
+            while(iss.good())
+            {
+                iss>>word;
+                tofirstupper(word,filecontent);
+            }
+            filecontent+="\n";
+        }
+        file.close();
+    }
+    file.close();
+    file.open(file_name,ios::out);
+    file<<filecontent;
+}
+//-----------------------------------------------------------------------------------------------------------------------------------
+void savefile(fstream &file,string file_name)
+{
+    int choice;
+    cout<<"where is you want to save the file\n"
+          "(1)to save in the same file\n"
+          "(2)to save in the different file\n"
+          ">>>> ";
+    cin>>choice;
+    if(choice==1){
+        cout<<"the modifications are applied in the same function :)"<<endl;
+    }
+    else if(choice==2){
+        string newnamefile,newfilecontent,line;fstream newfile;
+        load_file(newfile,newnamefile);
+        file.open(file_name,ios::in);
+        if(file.is_open())
+        {
+            while(getline(file,line))
+            {
+                cout<<line<<endl;
+                newfilecontent+=line+"\n";
+            }
+        }
+        cout<<newfilecontent<<endl;
+        file.close();
+        newfile.open(newnamefile,ios::out);
+        newfile<<newfilecontent;
+        newfile.close();
+    }
+}
+//------------------------------------------------------------------------------------------------------------------------------------
+int main()
+{
+    fstream filemodified;string file_name;
+    load_file(filemodified,file_name);
+    bool state=true;int option;
     while(state){
         cout << "what do you want to do\n"
                 "1- Add new text to the end of the file\n"
@@ -120,38 +254,38 @@ int main()
                 "15- Save\n"
                 "16- Exit\n"
                 ">>>> ";
-        cin>>typemodifys;
-        switch(typemodifys)
+        cin>>option;
+        switch(option)
         {
-        case 1:add_newtext(filecreated);
+        case 1:add_newtext();
             break;
-        case 2:displaycontent(filecreated);
+        case 2:displaycontent();
             break;
-        case 3:emptyfile(filecreated);
+        case 3:emptyfile();
             break;
-        case 4:encryptcontent(filecreated);
+        case 4:encryptcontent();
             break;
-        case 5:decryptcontent(filecreated);
+        case 5:decryptcontent();
             break;
-        case 6:mergetwofiles(filecreated);
+        case 6:mergetwofiles();
             break;
-        case 7:countwords(filecreated);
+        case 7:countwords();
             break;
-        case 8:countcharacters(filecreated);
+        case 8:countcharacters();
             break;
-        case 9:countnumberlines(filecreated);
+        case 9:countnumberlines();
             break;
-        case 10:searchword(filecreated);
+        case 10:searchword();
             break;
-        case 11:countwordrepetition(filecreated);
+        case 11:countwordrepetition(filemodified,file_name);
             break;
-        case 12:turntoupper(filecreated);
+        case 12:turntoupper(filemodified,file_name);
             break;
-        case 13:turntolower(filecreated);
+        case 13:turntolower(filemodified,file_name);
             break;
-        case 14:turnfirstcharacter(filecreated);
+        case 14:turnfircharupper(filemodified,file_name);
             break;
-        case 15:savefile(filecreated);
+        case 15:savefile(filemodified,file_name);
             break;
         case 16:state=false;
             break;
