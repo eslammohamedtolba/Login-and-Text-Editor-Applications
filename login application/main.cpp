@@ -8,6 +8,7 @@
 // Purpose:..........
 #include <bits/stdc++.h>
 using namespace std;
+fstream fileinformation;string filename="user informations.txt";
 struct infuser
 {
     string ID,username,password,email,phone;
@@ -59,6 +60,8 @@ void to_register()
     while(!checkpassword(user)){};
     while(!checkemail(user)){};
     cout<<"the registration completed successfully"<<endl;
+    fileinformation.open(filename,ios::out);
+
 }
 void to_login()
 {
@@ -70,8 +73,6 @@ void to_change_password()
 }
 int main()
 {
-    fstream fileinformation;string filename="user informations.txt";
-    fileinformation.open(filename);
     int option;bool state=true;
     while(state){
         cout <<"what do you want to do from this menu\n"
