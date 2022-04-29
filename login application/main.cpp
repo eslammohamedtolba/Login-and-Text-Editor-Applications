@@ -8,59 +8,8 @@
 // Purpose:..........
 #include <bits/stdc++.h>
 using namespace std;
-fstream fileinformation;string filename="user informations.txt";
-struct infuser
-{
-    string ID,username,password,email,phone;
-};
-bool checkID(infuser user)
-{
-    cout<<"please enter unique ID: "<<endl;
-    cin>>user.ID;
-    regex format("[0-9]+");
-    return regex_match(user.ID,format);
-}
-bool checkusername(infuser user)
-{
-    cout<<"please enter your new user name and must contain letters and underscore(_) only\n";
-    cin>>user.username;
-    regex format("[a-zA-Z_]+");
-    return regex_match(user.username,format);
-}
-bool checkemail(infuser user)
-{
-    cout<<"please enter your email and must contain digits or letters and after that @ and domain then .com only\n";
-    cin>>user.email;
-    regex format("[[:w:]]+@[[:w:]]+.com");
-    return regex_match(user.email,format);
-}
-bool checkpassword(infuser user)
-{
-    bool state=false;string repeatedpass;
-    while(!state){
-        cout<<"please enter your password of length 10 and must contain at least one from digits and letters and symbols only\n";
-        cin>>user.password;
-        regex format("(?=.*[a-zA-Z])(?=.*[@#$&*!-_])(?=.*[0-9])[a-zA-Z0-9@#$&*!-_]{10,}");
-        state=regex_match(user.password,format);
-    }
-    while(state){
-        cout<<"please repeat the password again correctly\n";
-        cin>>repeatedpass;
-        if(repeatedpass==user.password){
-            state=false;
-        }
-    }
-    return true;
-}
 void to_register()
 {
-    infuser user;
-    while(!checkID(user)){};
-    while(!checkusername(user)){};
-    while(!checkpassword(user)){};
-    while(!checkemail(user)){};
-    cout<<"the registration completed successfully"<<endl;
-    fileinformation.open(filename,ios::out);
 
 }
 void to_login()
