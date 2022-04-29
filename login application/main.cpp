@@ -23,7 +23,7 @@ bool checkusername(infuser user)
 {
     cout<<"please enter your new user name and must contain letters and underscore(_) only\n";
     cin>>user.username;
-    regex format("[a-zA-Z]*[_]*");
+    regex format("[a-zA-Z_]+");
     return regex_match(user.username,format);
 }
 bool checkemail(infuser user)
@@ -39,7 +39,7 @@ bool checkpassword(infuser user)
     while(!state){
         cout<<"please enter your password of length 10 and must contain at least one from digits and letters and symbols only\n";
         cin>>user.password;
-        regex format("(?=.*[a-zA-Z])(?=.*[@#$&*!])(?=.*[0-9])[a-zA-Z0-9@#$&*!]{10,}");
+        regex format("(?=.*[a-zA-Z])(?=.*[@#$&*!-_])(?=.*[0-9])[a-zA-Z0-9@#$&*!-_]{10,}");
         state=regex_match(user.password,format);
     }
     while(state){
@@ -71,7 +71,7 @@ void to_change_password()
 int main()
 {
     fstream fileinformation;string filename="user informations.txt";
-
+    fileinformation.open(filename);
     int option;bool state=true;
     while(state){
         cout <<"what do you want to do from this menu\n"
