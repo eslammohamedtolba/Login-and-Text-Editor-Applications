@@ -1,4 +1,3 @@
-/*
 // FCAI – Programming 1 – 2022 - Assignment 4
 // Program Name: Text Editor Application
 // Last Modification Date: xx/xx/xxxx
@@ -36,27 +35,7 @@ void load_file(fstream& filemodified, string& file_name)
         filemodified.close();
     }
 }
-//-----------------------------------------------------------------------------------------------------------------------------------
-/*
-void fillt_vector(fstream &file,string file_name,vector<string>&veclines)
-{
-    file.open(file_name,ios::in);
-    string line;
-    if(file.is_open()){
-        while(getline(file,line)){
-                veclines.push_back(line);
-        }
-    }
-}
-void fillf_vector(fstream &file,string file_name,vector<string>&veclines)
-{
-    file.open(file_name,ios::in);
-    ostream_iterator<string>out_iterator(file,"\n");
-    copy(veclines.begin(),veclines.end(),out_iterator);
-}
-*/
-//-----------------------------------------------------------------------------------------------------------------------------------
-
+//------------------------------------------------------------------------------------------------------------
 void addNewText(fstream& file, string file_name)
 {
     string  addedContent;
@@ -69,22 +48,6 @@ void addNewText(fstream& file, string file_name)
     cin.clear();
     file.close();
 }
-/*
-void addNewText(fstream& file, string file_name)
-{
-    file.open(file_name, ios::app);
-    string addedcontent;
-    cout << "enter things you want to add it then" << endl;
-    cout << "press ctrl+z to exit" << endl;
-    do {
-        getline(cin, addedcontent);
-        file << addedcontent << endl;
-        if (cin.eof())
-            break;
-    } while (cin);
-    file.close();
-}
-*/
 //-----------------------------------------------------------------------------------------------------------------------------------
 void displaycontent(fstream& file, string file_name)
 {
@@ -93,7 +56,7 @@ void displaycontent(fstream& file, string file_name)
 
     cout << "the contents of the file are-->\n";
     while (!file.eof()) {//if we didn't reach to the end of the file do the following
-        //read line by line 
+        //read line by line
         getline(file, filecontents);//read the line and stor it in the string line
         //print this line
         cout << filecontents << endl;
@@ -122,7 +85,7 @@ void encryptcontent(fstream& file, string file_name)
     file.open(file_name, ios::in);
 
     while (!file.eof()) {// If we haven't reached the end of the file
-        //read line by line 
+        //read line by line
         getline(file, filecontents);//read the line and stor it in the string line
         shifftChar(filecontents, storeContents, 1);
     }
@@ -137,7 +100,7 @@ void decryptcontent(fstream& file, string file_name) {
     file.open(file_name, ios::in);
 
     while (!file.eof()) {// If we haven't reached the end of the file
-        //read line by line 
+        //read line by line
         getline(file, filecontents);//read the line and stor it in the string line
         shifftChar(filecontents, storeContents, -1);
     }
