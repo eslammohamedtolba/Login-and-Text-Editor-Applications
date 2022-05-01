@@ -48,10 +48,12 @@ void to_register(infuser &user)
     fillfile(user);fillmapinfusers();
     cout<<"the registration completed successfully"<<endl;
 }
+//--------------------------------------------------------------------------------------------------------------------------------------
 void to_login(infuser &user)
 {
     
 }
+//---------------------------------------------------------------------------------------------------------------------------------------
 void to_change_password(infuser &user)
 {
     to_login(user);string oldpassword=user.password,newpassword;
