@@ -1,12 +1,13 @@
 // FCAI – Programming 1 – 2022 - Assignment 4
-// Program Name: editor text application
+// Program Name: Text Editor Application
 // Last Modification Date: xx/xx/xxxx
 // Author1 and ID and Group: Eslam mohamed abdel azim ali, 20211013, group A
-// Author2 and ID and Group: xxxxx xxxxx
+// Author2 and ID and Group: Sama Ahmed Saeed, 20210163, group A
 // Author3 and ID and Group: xxxxx xxxxx
 // Teaching Assistant: Eng.Afaf Abelmonem
 // Purpose:this application applys some modifications on files that the user enters
-#include <bits/stdc++.h>
+#include <iostream>
+#include <sstream>
 #include <fstream>
 #include<cctype>
 using namespace std;
@@ -60,14 +61,25 @@ void add_newtext()
 
 }
 //-----------------------------------------------------------------------------------------------------------------------------------
-void displaycontent()
+void displaycontent(fstream& file, string file_name)
 {
+    string filecontents;
+    file.open(file_name, ios::in);
 
+    cout << "the contents of the file are-->\n";
+    while (!file.eof()) {//if we didn't reach to the end of the file do the following
+        //read line by line 
+        getline(file, filecontents);//read the line and stor it in the string line
+        //print this line
+        cout << filecontents << endl;
+    }
+    file.close();
 }
 //-----------------------------------------------------------------------------------------------------------------------------------
-void emptyfile()
+void emptyfile(fstream& file, string file_name)
 {
-
+    file.open(file_name, ios::out);
+    file.close();
 }
 //-----------------------------------------------------------------------------------------------------------------------------------
 void encryptcontent()
@@ -275,9 +287,9 @@ int main()
         {
         case 1:add_newtext();
             break;
-        case 2:displaycontent();
+        case 2:displaycontent(filemodified, file_name);
             break;
-        case 3:emptyfile();
+        case 3:emptyfile(filemodified, file_name);
             break;
         case 4:encryptcontent();
             break;
