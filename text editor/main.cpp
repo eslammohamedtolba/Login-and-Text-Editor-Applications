@@ -1,3 +1,4 @@
+/*
 // FCAI – Programming 1 – 2022 - Assignment 4
 // Program Name: Text Editor Application
 // Last Modification Date: xx/xx/xxxx
@@ -55,6 +56,7 @@ void fillf_vector(fstream &file,string file_name,vector<string>&veclines)
 }
 */
 //-----------------------------------------------------------------------------------------------------------------------------------
+
 void addNewText(fstream& file, string file_name)
 {
     string  addedContent;
@@ -64,8 +66,25 @@ void addNewText(fstream& file, string file_name)
     while (getline(cin, addedContent)) {//end at ctr+z??
         file << addedContent << "\n";
     }
+    cin.clear();
     file.close();
 }
+/*
+void addNewText(fstream& file, string file_name)
+{
+    file.open(file_name, ios::app);
+    string addedcontent;
+    cout << "enter things you want to add it then" << endl;
+    cout << "press ctrl+z to exit" << endl;
+    do {
+        getline(cin, addedcontent);
+        file << addedcontent << endl;
+        if (cin.eof())
+            break;
+    } while (cin);
+    file.close();
+}
+*/
 //-----------------------------------------------------------------------------------------------------------------------------------
 void displaycontent(fstream& file, string file_name)
 {
