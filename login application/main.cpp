@@ -42,13 +42,13 @@ void fillfile(infuser user)
     fileinformation.close();
 }
 //-------------------------------------------------------------------------------------------------------------------------------------
-void to_register()
+void to_register(infuser &user)
 {
     //your code...........
     fillfile(user);fillmapinfusers();
     cout<<"the registration completed successfully"<<endl;
 }
-void to_login()
+void to_login(infuser &user)
 {
     
 }
