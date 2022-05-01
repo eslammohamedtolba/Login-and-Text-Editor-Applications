@@ -1,4 +1,4 @@
-// FCAI – Programming 1 – 2022 - Assignment 4
+// FCAI â€“ Programming 1 â€“ 2022 - Assignment 4
 // Program Name: Text Editor Application
 // Last Modification Date: xx/xx/xxxx
 // Author1 and ID and Group: Eslam mohamed abdel azim ali, 20211013, group A
@@ -94,7 +94,7 @@ void encryptcontent(fstream& file, string file_name)
     file << storeContents;
     file.close();
 }
-//-----------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------
 void decryptcontent(fstream& file, string file_name) {
     string filecontents, word, storeContents = "";
     file.open(file_name, ios::in);
