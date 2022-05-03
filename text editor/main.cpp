@@ -203,18 +203,15 @@ void countwordrepetition(fstream& file, string file_name)
     file.open(file_name, ios::in); int repetition = 0; string wordsearch, line, word;
     cout << "what is the word you want to know repetition number of it" << endl;
     cin >> wordsearch; tolowercase(wordsearch);
-    if (file.is_open()) {
-        while (getline(file, line)) {
-            istringstream iss;
-            iss.str(line);
-            while (iss.good()) {
-                iss >> word; tolowercase(word);
-                if (word == wordsearch) {
-                    repetition++;
-                }
+    while (getline(file, line)) {
+        istringstream iss;
+        iss.str(line);
+        while (iss.good()) {
+            iss >> word; tolowercase(word);
+            if (word == wordsearch) {
+                repetition++;
             }
         }
-        file.close();
     }
     file.close();
     cout << "the word " << wordsearch << " is repeated by " << repetition << " times" << endl;
@@ -224,10 +221,8 @@ void turntoupper(fstream& file, string file_name)
 {
     file.open(file_name, ios::in);
     string filecontent, line;
-    if (file.is_open()) {
-        while (getline(file, line)) {
-            filecontent += line + "\n";
-        }
+    while (getline(file, line)) {
+        filecontent += line + "\n";
     }
     file.close();
     touppercase(filecontent);
@@ -240,10 +235,8 @@ void turntolower(fstream& file, string file_name)
 {
     file.open(file_name, ios::in);
     string filecontent, line;
-    if (file.is_open()) {
-        while (getline(file, line)) {
-            filecontent += line + "\n";
-        }
+    while (getline(file, line)) {
+        filecontent += line + "\n";
     }
     file.close();
     tolowercase(filecontent);
@@ -256,19 +249,16 @@ void turnfircharupper(fstream& file, string file_name)
 {
     file.open(file_name, ios::in);
     string filecontent, line, word;
-    if (file.is_open()) {
-        while (getline(file, line))
+    while (getline(file, line))
+    {
+        istringstream iss;
+        iss.str(line);
+        while (iss.good())
         {
-            istringstream iss;
-            iss.str(line);
-            while (iss.good())
-            {
-                iss >> word;
-                tofirstupper(word, filecontent);
-            }
-            filecontent += "\n";
+            iss >> word;
+            tofirstupper(word, filecontent);
         }
-        file.close();
+        filecontent += "\n";
     }
     file.close();
     file.open(file_name, ios::out);
