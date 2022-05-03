@@ -1,3 +1,4 @@
+
 // FCAI – Programming 1 – 2022 - Assignment 4
 // Program Name: Text Editor Application
 // Last Modification Date: xx/xx/xxxx
@@ -17,8 +18,14 @@ void load_file(fstream& filemodified, string& file_name)
     cout << "please enter the file name to deal with" << endl;
     getline(cin, file_name);
     //to check if the name of function ends by .txt or not.
-    if (file_name.substr(file_name.size() - 4, file_name.size() - 1) != ".txt") {
+
+    if (file_name.size() < 4) {
         file_name += ".txt";
+    }
+    else {
+        if (file_name.substr(file_name.size() - 4, file_name.size() - 1) != ".txt") {
+            file_name += ".txt";
+        }
     }
     //to test if the name of file exist or not.
     filemodified.open(file_name);
@@ -35,7 +42,27 @@ void load_file(fstream& filemodified, string& file_name)
         filemodified.close();
     }
 }
-//------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------------------
+/*
+void fillt_vector(fstream &file,string file_name,vector<string>&veclines)
+{
+    file.open(file_name,ios::in);
+    string line;
+    if(file.is_open()){
+        while(getline(file,line)){
+                veclines.push_back(line);
+        }
+    }
+}
+void fillf_vector(fstream &file,string file_name,vector<string>&veclines)
+{
+    file.open(file_name,ios::in);
+    ostream_iterator<string>out_iterator(file,"\n");
+    copy(veclines.begin(),veclines.end(),out_iterator);
+}
+*/
+//-----------------------------------------------------------------------------------------------------------------------------------
+
 void addNewText(fstream& file, string file_name)
 {
     string  addedContent;
@@ -48,6 +75,22 @@ void addNewText(fstream& file, string file_name)
     cin.clear();
     file.close();
 }
+/*
+void addNewText(fstream& file, string file_name)
+{
+    file.open(file_name, ios::app);
+    string addedcontent;
+    cout << "enter things you want to add it then" << endl;
+    cout << "press ctrl+z to exit" << endl;
+    do {
+        getline(cin, addedcontent);
+        file << addedcontent << endl;
+        if (cin.eof())
+            break;
+    } while (cin);
+    file.close();
+}
+*/
 //-----------------------------------------------------------------------------------------------------------------------------------
 void displaycontent(fstream& file, string file_name)
 {
@@ -56,7 +99,7 @@ void displaycontent(fstream& file, string file_name)
 
     cout << "the contents of the file are-->\n";
     while (!file.eof()) {//if we didn't reach to the end of the file do the following
-        //read line by line
+        //read line by line 
         getline(file, filecontents);//read the line and stor it in the string line
         //print this line
         cout << filecontents << endl;
@@ -85,7 +128,7 @@ void encryptcontent(fstream& file, string file_name)
     file.open(file_name, ios::in);
 
     while (!file.eof()) {// If we haven't reached the end of the file
-        //read line by line
+        //read line by line 
         getline(file, filecontents);//read the line and stor it in the string line
         shifftChar(filecontents, storeContents, 1);
     }
@@ -94,13 +137,13 @@ void encryptcontent(fstream& file, string file_name)
     file << storeContents;
     file.close();
 }
-//-------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------------------
 void decryptcontent(fstream& file, string file_name) {
     string filecontents, word, storeContents = "";
     file.open(file_name, ios::in);
 
     while (!file.eof()) {// If we haven't reached the end of the file
-        //read line by line
+        //read line by line 
         getline(file, filecontents);//read the line and stor it in the string line
         shifftChar(filecontents, storeContents, -1);
     }
@@ -303,8 +346,10 @@ int main()
         cin >> option;
         switch (option)
         {
-        case 1:addNewText(filemodified, file_name);
-            break;
+        case 1: {addNewText(filemodified, file_name);
+            cin.clear();
+            filemodified.close();
+            break; }
         case 2:displaycontent(filemodified, file_name);
             break;
         case 3:emptyfile(filemodified, file_name);
@@ -340,3 +385,4 @@ int main()
         }
     }
 }
+
