@@ -43,25 +43,6 @@ void load_file(fstream& filemodified, string& file_name)
     }
 }
 //-----------------------------------------------------------------------------------------------------------------------------------
-/*
-void fillt_vector(fstream &file,string file_name,vector<string>&veclines)
-{
-    file.open(file_name,ios::in);
-    string line;
-    if(file.is_open()){
-        while(getline(file,line)){
-                veclines.push_back(line);
-        }
-    }
-}
-void fillf_vector(fstream &file,string file_name,vector<string>&veclines)
-{
-    file.open(file_name,ios::in);
-    ostream_iterator<string>out_iterator(file,"\n");
-    copy(veclines.begin(),veclines.end(),out_iterator);
-}
-*/
-//-----------------------------------------------------------------------------------------------------------------------------------
 
 void addNewText(fstream& file, string file_name)
 {
@@ -75,22 +56,6 @@ void addNewText(fstream& file, string file_name)
     cin.clear();
     file.close();
 }
-/*
-void addNewText(fstream& file, string file_name)
-{
-    file.open(file_name, ios::app);
-    string addedcontent;
-    cout << "enter things you want to add it then" << endl;
-    cout << "press ctrl+z to exit" << endl;
-    do {
-        getline(cin, addedcontent);
-        file << addedcontent << endl;
-        if (cin.eof())
-            break;
-    } while (cin);
-    file.close();
-}
-*/
 //-----------------------------------------------------------------------------------------------------------------------------------
 void displaycontent(fstream& file, string file_name)
 {
