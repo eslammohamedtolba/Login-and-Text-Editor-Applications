@@ -1,4 +1,5 @@
-// FCAI – Programming 1 – 2022 - Assignment 4
+
+// FCAI â€“ Programming 1 â€“ 2022 - Assignment 4
 // Program Name: Text Editor Application
 // Last Modification Date: xx/xx/xxxx
 // Author1 and ID and Group: Eslam mohamed abdel azim ali, 20211013, group A
@@ -63,7 +64,7 @@ void displaycontent(fstream& file, string file_name)
 
     cout << "the contents of the file are-->\n";
     while (!file.eof()) {//if we didn't reach to the end of the file do the following
-        //read line by line
+        //read line by line 
         getline(file, filecontents);//read the line and stor it in the string line
         //print this line
         cout << filecontents << endl;
@@ -92,7 +93,7 @@ void encryptcontent(fstream& file, string file_name)
     file.open(file_name, ios::in);
 
     while (!file.eof()) {// If we haven't reached the end of the file
-        //read line by line
+        //read line by line 
         getline(file, filecontents);//read the line and stor it in the string line
         shifftChar(filecontents, storeContents, 1);
     }
@@ -107,7 +108,7 @@ void decryptcontent(fstream& file, string file_name) {
     file.open(file_name, ios::in);
 
     while (!file.eof()) {// If we haven't reached the end of the file
-        //read line by line
+        //read line by line 
         getline(file, filecontents);//read the line and stor it in the string line
         shifftChar(filecontents, storeContents, -1);
     }
@@ -339,3 +340,4 @@ int main()
         }
     }
 }
+
