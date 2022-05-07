@@ -17,8 +17,14 @@ void load_file(fstream& filemodified, string& file_name)
     cout << "please enter the file name to deal with" << endl;
     getline(cin, file_name);
     //to check if the name of function ends by .txt or not.
-    if (file_name.substr(file_name.size() - 4, file_name.size() - 1) != ".txt") {
+
+    if (file_name.size() < 4) {
         file_name += ".txt";
+    }
+    else {
+        if (file_name.substr(file_name.size() - 4, file_name.size() - 1) != ".txt") {
+            file_name += ".txt";
+        }
     }
     //to test if the name of file exist or not.
     filemodified.open(file_name);
@@ -35,7 +41,8 @@ void load_file(fstream& filemodified, string& file_name)
         filemodified.close();
     }
 }
-//------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------------------
+
 void addNewText(fstream& file, string file_name)
 {
     string  addedContent;
@@ -160,18 +167,15 @@ void countwordrepetition(fstream& file, string file_name)
     file.open(file_name, ios::in); int repetition = 0; string wordsearch, line, word;
     cout << "what is the word you want to know repetition number of it" << endl;
     cin >> wordsearch; tolowercase(wordsearch);
-    if (file.is_open()) {
-        while (getline(file, line)) {
-            istringstream iss;
-            iss.str(line);
-            while (iss.good()) {
-                iss >> word; tolowercase(word);
-                if (word == wordsearch) {
-                    repetition++;
-                }
+    while (getline(file, line)) {
+        istringstream iss;
+        iss.str(line);
+        while (iss.good()) {
+            iss >> word; tolowercase(word);
+            if (word == wordsearch) {
+                repetition++;
             }
         }
-        file.close();
     }
     file.close();
     cout << "the word " << wordsearch << " is repeated by " << repetition << " times" << endl;
@@ -181,10 +185,8 @@ void turntoupper(fstream& file, string file_name)
 {
     file.open(file_name, ios::in);
     string filecontent, line;
-    if (file.is_open()) {
-        while (getline(file, line)) {
-            filecontent += line + "\n";
-        }
+    while (getline(file, line)) {
+        filecontent += line + "\n";
     }
     file.close();
     touppercase(filecontent);
@@ -197,10 +199,8 @@ void turntolower(fstream& file, string file_name)
 {
     file.open(file_name, ios::in);
     string filecontent, line;
-    if (file.is_open()) {
-        while (getline(file, line)) {
-            filecontent += line + "\n";
-        }
+    while (getline(file, line)) {
+        filecontent += line + "\n";
     }
     file.close();
     tolowercase(filecontent);
@@ -213,19 +213,16 @@ void turnfircharupper(fstream& file, string file_name)
 {
     file.open(file_name, ios::in);
     string filecontent, line, word;
-    if (file.is_open()) {
-        while (getline(file, line))
+    while (getline(file, line))
+    {
+        istringstream iss;
+        iss.str(line);
+        while (iss.good())
         {
-            istringstream iss;
-            iss.str(line);
-            while (iss.good())
-            {
-                iss >> word;
-                tofirstupper(word, filecontent);
-            }
-            filecontent += "\n";
+            iss >> word;
+            tofirstupper(word, filecontent);
         }
-        file.close();
+        filecontent += "\n";
     }
     file.close();
     file.open(file_name, ios::out);
@@ -303,8 +300,10 @@ int main()
         cin >> option;
         switch (option)
         {
-        case 1:addNewText(filemodified, file_name);
-            break;
+        case 1: {addNewText(filemodified, file_name);
+            cin.clear();
+            filemodified.close();
+            break; }
         case 2:displaycontent(filemodified, file_name);
             break;
         case 3:emptyfile(filemodified, file_name);
