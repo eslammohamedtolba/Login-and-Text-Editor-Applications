@@ -280,3 +280,117 @@ int main()
         else cout<<"the option you entered is't correct ";
     }
 }
+/*
+
+#include <iostream>
+#include <map>
+#include <fstream>
+#include <regex>
+#include <string>
+using namespace std;
+fstream userinformf;
+void storfile();
+void checkformate(regex e, string& u, string thing);
+void stormap();
+void foundEmail(string& s);
+struct userinfor {
+	string ID;
+	string username;
+	string  password;
+	string email;
+	string mobilenumber;
+};
+userinfor getinfor();
+int main() {
+	storfile();
+}
+
+void storfile(){
+	userinfor x = getinfor();
+	userinformf.open("userinformation.txt", ios::app);
+	userinformf << x.ID << endl;
+	userinformf << x.email << endl;
+	userinformf << x.password << endl;
+	userinformf << x.username << endl;
+	userinformf << x.mobilenumber << endl;
+	userinformf.close();
+}
+userinfor getinfor() {
+	userinfor user;
+	string str;
+	cout << "please enter user name has only – or letters\n";
+	getline(cin,str);
+	//e1 is a valid username format
+	regex e1("[-]*[a-z]+[-]*[a-z]*", regex_constants::icase);
+	checkformate(e1, str, "user name");
+	user.username = str;
+
+	cout << "\nplease enter password\n";
+	getline(cin, user.password);
+	
+	cout << "\nplease enter email\n";
+	getline(cin, str);
+	//regex e2("[a-z]+[^.]{0,1}@", regex_constants::icase);
+	//regex e2("[^.]{1}([a-z]*)([ #!\%\$‘&]*)([.]*)([.]{0,1})[[:w:]]*@[[:w:]]+\.com");
+	regex e2("[a-z]+", regex_constants::icase);
+	foundEmail(str);
+	checkformate(e2, str, " email");
+	user.email = str;
+
+	cout << "\nplease enter mobile number\n";
+	//e3 is a valid mobile number format
+	regex e3("01[0125]+[0-9]{8}");
+	getline(cin, str);
+	checkformate(e3, str, "mobile number");
+	user.mobilenumber = str;
+
+	cout << "\nplease enter ID\n";
+	getline(cin, user.ID);
+	return user;
+}
+map<string, string>m;
+
+void stormap() {
+	while (!userinformf.eof()) {
+		string key, value, line;
+		getline(userinformf, line);
+		getline(userinformf, key);
+		getline(userinformf, line);
+		getline(userinformf, value);
+		getline(userinformf, line);
+		m[key] = value;
+	}
+}
+
+void foundEmail(string& s) {
+	userinformf.open("userinformation.txt", ios::in);
+	if (userinformf.fail()) {
+		userinformf.close();
+		userinformf.open("userinformation.txt", ios::out);
+		userinformf.close();
+	}
+	else {
+		stormap();
+		while (m.count(s)) {
+		cout << "this email is already regested please enter another ";
+		getline(cin, s);
+		}
+	}
+}
+
+void checkformate(regex e,string& u,string thing) {
+	while(true){
+
+		bool match = regex_match(u, e);
+		if (match) {
+			break;
+		}
+		else {
+			cout << "please enter a valid "<<thing<<"\n";
+			getline(cin, u);
+		}
+	} 
+}
+
+
+*/
