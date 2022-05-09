@@ -1,10 +1,9 @@
-
-// FCAI â€“ Programming 1 â€“ 2022 - Assignment 4
+// FCAI – Programming 1 – 2022 - Assignment 4
 // Program Name: Text Editor Application
 // Last Modification Date: xx/xx/xxxx
 // Author1 and ID and Group: Eslam mohamed abdel azim ali, 20211013, group A
 // Author2 and ID and Group: Sama Ahmed Saeed, 20210163, group A
-// Author3 and ID and Group: xxxxx xxxxx
+// Author3 and ID and Group: Omar Rabea Shaban Bayoumi, 20210593, group A
 // Teaching Assistant: Eng.Afaf Abelmonem
 // Purpose:this application applys some modifications on files that the user enters
 #include <iostream>
@@ -64,7 +63,7 @@ void displaycontent(fstream& file, string file_name)
 
     cout << "the contents of the file are-->\n";
     while (!file.eof()) {//if we didn't reach to the end of the file do the following
-        //read line by line 
+        //read line by line
         getline(file, filecontents);//read the line and stor it in the string line
         //print this line
         cout << filecontents << endl;
@@ -93,7 +92,7 @@ void encryptcontent(fstream& file, string file_name)
     file.open(file_name, ios::in);
 
     while (!file.eof()) {// If we haven't reached the end of the file
-        //read line by line 
+        //read line by line
         getline(file, filecontents);//read the line and stor it in the string line
         shifftChar(filecontents, storeContents, 1);
     }
@@ -108,7 +107,7 @@ void decryptcontent(fstream& file, string file_name) {
     file.open(file_name, ios::in);
 
     while (!file.eof()) {// If we haven't reached the end of the file
-        //read line by line 
+        //read line by line
         getline(file, filecontents);//read the line and stor it in the string line
         shifftChar(filecontents, storeContents, -1);
     }
@@ -120,26 +119,160 @@ void decryptcontent(fstream& file, string file_name) {
 //-----------------------------------------------------------------------------------------------------------------------------------
 void mergetwofiles()
 {
+    fstream f1, f2, f3;
+    string str1, str2; //str1 for fetching string line from file 1 and str2 for fetching string from file2
+
+    f1.open("file1.txt", ios::in);//opening file in reading mode
+    f2.open("file2.txt", ios::in);
+    f3.open("file3.txt", ios::out);//opening file in writing mode
+
+    while (getline(f1, str1)) { //read lines from file object and put it into string and push back to file 3.
+        f3 << str1; // inserting the fetched string inside file3
+        f3 << endl;
+    }
+
+    while (getline(f2, str2)) { //Same step for file 2 to file 3 fetching
+        f3 << str2;
+        f3 << endl;
+    }
+
+    f1.close();
+    f2.close();
+    f3.close();
+}
+//-----------------------------------------------------------------------------------------------------------------------------------
+void countwords(string file_name)
+{
+
+    ifstream fin;
+    fin.open(file_name);          // To open the file
+    char word[30];
+    int count = 0;
+    while (!fin.eof())
+    {
+        fin >> word;
+        count++;
+    }
+    cout << "The Number Of Words In Ur File = " << count << endl;
+    fin.close();     // To close the file
+
+
+
+
+
 
 }
 //-----------------------------------------------------------------------------------------------------------------------------------
-void countwords()
+void countcharacters(string file_name)
 {
+    fstream ncha(file_name);
+    int ncharacters = -1;           //Because the first word not count
+    char cha;
+    ncha.seekg(0, ios::beg);       // To bring the pointer to the start
+    while (ncha)
+    {
+
+
+
+
+        ncha.get(cha);
+        if (cha != '\n')           // The characters is all that we wrote except the new line
+            ncharacters++;
+
+
+
+
+    }
+    cout << "The Number Of Characters In Ur File = " << ncharacters << endl;
+
+
+    ncha.close();
 
 }
 //-----------------------------------------------------------------------------------------------------------------------------------
-void countcharacters()
+void countnumberlines(string file_name)
 {
+
+    fstream nl(file_name);
+    int nlines = 1;
+    char cha;
+    nl.seekg(0, ios::beg);       // To bring the pointer to the start
+    while (nl)
+    {
+
+
+
+
+        nl.get(cha);
+        if (cha == '\n')
+            nlines++;
+
+
+
+    }
+    cout << "The Number Of Lines In Ur File = " << nlines << endl;
+
+
+    nl.close();
+
+
+
+
 
 }
 //-----------------------------------------------------------------------------------------------------------------------------------
-void countnumberlines()
+void searchword(fstream& file, string file_name)
 {
 
-}
-//-----------------------------------------------------------------------------------------------------------------------------------
-void searchword()
-{
+    string search;
+    int offset, c = 1;
+    string line;
+
+
+    file.open(file_name, ios::in);
+    cout << "Type the word that you want to search about it: ";
+    cin >> search;
+    if (file.is_open())
+    {
+        while (!file.eof())
+        {
+
+            getline(file, line);
+            if ((offset = line.find(search, 0)) != string::npos)       // string::npos is returned if string is not found
+            {
+                cout << endl;
+                cout << "The word (" << search << ")" << " has been found in the file *-* ." << endl;
+                break;
+
+            }
+            c++;
+
+
+
+
+
+
+        }
+
+    }
+    if (offset == -1)
+    {
+
+        cout << endl;
+        cout << "OMG!!!!! the word (" << search << ")" << " hasn't been found in the file '_' ." << endl;
+
+
+
+
+    }
+
+
+
+
+
+
+    file.close();
+
 
 }
 //-----------------------------------------------------------------------------------------------------------------------------------
@@ -315,13 +448,13 @@ int main()
             break;
         case 6:mergetwofiles();
             break;
-        case 7:countwords();
+        case 7:countwords(file_name);
             break;
-        case 8:countcharacters();
+        case 8:countcharacters(file_name);
             break;
-        case 9:countnumberlines();
+        case 9:countnumberlines(file_name);
             break;
-        case 10:searchword();
+        case 10:searchword(filemodified,file_name);
             break;
         case 11:countwordrepetition(filemodified, file_name);
             break;
@@ -340,4 +473,5 @@ int main()
         }
     }
 }
+
 
