@@ -260,7 +260,7 @@ void Forgot_Password()
 int main()
 {
     infuser user;
-    fillmapinfusers();
+    fillmapinfusers(); // here we call this function to fill map in beginning of program or start of run by all users informations to make it easy for us to get it
     int option;bool state=true;
     while(state){
         cout <<"what do you want to do from this menu\n"
@@ -286,6 +286,6 @@ int main()
         else if(option==5){
             state=false;
         }
-        else cout<<"the option you entered is't correct ";
+        else cout<<"the option you entered is't correct "; //if the user didn't enter the available options then we tell him that and to reselect another option
     }
 }
