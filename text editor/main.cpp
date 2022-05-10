@@ -1,4 +1,4 @@
-// FCAI – Programming 1 – 2022 - Assignment 4
+// FCAI â€“ Programming 1 â€“ 2022 - Assignment 4
 // Program Name: Text Editor Application
 // Last Modification Date: xx/xx/xxxx
 // Author1 and ID and Group: Eslam mohamed abdel azim ali, 20211013, group A
@@ -155,12 +155,6 @@ void countwords(string file_name)
     }
     cout << "The Number Of Words In Ur File = " << count << endl;
     fin.close();     // To close the file
-
-
-
-
-
-
 }
 //-----------------------------------------------------------------------------------------------------------------------------------
 void countcharacters(string file_name)
@@ -171,64 +165,35 @@ void countcharacters(string file_name)
     ncha.seekg(0, ios::beg);       // To bring the pointer to the start
     while (ncha)
     {
-
-
-
-
         ncha.get(cha);
         if (cha != '\n')           // The characters is all that we wrote except the new line
             ncharacters++;
-
-
-
-
     }
     cout << "The Number Of Characters In Ur File = " << ncharacters << endl;
-
-
     ncha.close();
-
 }
 //-----------------------------------------------------------------------------------------------------------------------------------
 void countnumberlines(string file_name)
 {
-
     fstream nl(file_name);
     int nlines = 1;
     char cha;
     nl.seekg(0, ios::beg);       // To bring the pointer to the start
     while (nl)
     {
-
-
-
-
         nl.get(cha);
         if (cha == '\n')
             nlines++;
-
-
-
     }
     cout << "The Number Of Lines In Ur File = " << nlines << endl;
-
-
     nl.close();
-
-
-
-
-
 }
 //-----------------------------------------------------------------------------------------------------------------------------------
 void searchword(fstream& file, string file_name)
 {
-
     string search;
     int offset, c = 1;
     string line;
-
-
     file.open(file_name, ios::in);
     cout << "Type the word that you want to search about it: ";
     cin >> search;
@@ -236,44 +201,22 @@ void searchword(fstream& file, string file_name)
     {
         while (!file.eof())
         {
-
             getline(file, line);
             if ((offset = line.find(search, 0)) != string::npos)       // string::npos is returned if string is not found
             {
                 cout << endl;
                 cout << "The word (" << search << ")" << " has been found in the file *-* ." << endl;
                 break;
-
             }
             c++;
-
-
-
-
-
-
         }
-
     }
     if (offset == -1)
     {
-
         cout << endl;
         cout << "OMG!!!!! the word (" << search << ")" << " hasn't been found in the file '_' ." << endl;
-
-
-
-
     }
-
-
-
-
-
-
     file.close();
-
-
 }
 //-----------------------------------------------------------------------------------------------------------------------------------
 void tolowercase(string& word)
