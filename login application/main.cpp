@@ -113,7 +113,7 @@ string inp_invispass(string &password)
             cout<<"*";
         }
     }
-    cout<<endl;//<<password<<endl;
+    cout<<endl;
     return password;
 }
 //--------------------------------------------------------------------------------
@@ -166,7 +166,7 @@ void to_register(infuser &user)
 void to_login(infuser &user)
 {
     while(true){
-        cout<<"please enter your ID and your password that aready exist in this system"<<endl;
+        cout<<"please enter your ID and your password that already exist in this system"<<endl;
         cin>>user.ID;
         user.password=inp_invispass(user.password);encryptpassword(user.password);
         if((mapinfusers.count(user.ID)>0) && (mapinfusers[user.ID].password==user.password))
