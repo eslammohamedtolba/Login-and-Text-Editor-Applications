@@ -115,7 +115,7 @@ string inp_invispass(string &password) // this function to make the user input t
         }
     }
     cout<<endl;
-    return password; //here we return the value after enter it to variable userpassword to take its value and it has changed too because it sent as reference
+    return password; //here we return the value after enter it to variable userpassword to take its value and it has changed too because it was sent as reference
 }
 //--------------------------------------------------------------------------------
 bool checkpassword(string &userpassword)
