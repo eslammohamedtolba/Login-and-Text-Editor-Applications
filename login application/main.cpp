@@ -12,14 +12,14 @@
 #include<fstream>
 using namespace std;
 //------------------------------------------------------------------------------------------------------------------------------------
-fstream fileinformation,storingfile;string filename="user informations.txt";
-struct infuser
+fstream fileinformation,storingfile;string filename="user informations.txt";//to create the file and its name 
+struct infuser  //to create the struct that will contain the user information 
 {
     string ID,email,password,username,mobile;
 };
 map<string,infuser>mapinfusers;
 //-------------------------------------------------------------------------------------------------------------------------------------
-void fillmapinfusers()
+void fillmapinfusers() //function to fill the map by the values that exist in the file by run the program or register the 
 {
     fileinformation.open(filename,ios::in);string line1,line2,line3,line4,line5;
     while(!fileinformation.eof())
@@ -29,7 +29,7 @@ void fillmapinfusers()
         getline(fileinformation,line3);
         getline(fileinformation,line4);
         getline(fileinformation,line5);
-        mapinfusers[line1] = {line1,line2,line3,line4,line5};
+        mapinfusers[line1] = {line1,line2,line3,line4,line5}; // to make the key map is the ID and the value is the information of users
         /*
         cout<<mapinfusers[line1].ID<<endl;
         cout<<mapinfusers[line1].email<<endl;
@@ -41,9 +41,9 @@ void fillmapinfusers()
     fileinformation.close();
 }
 //------------------------------------------------------------------------------------------------------------------------------------
-void fillfile(infuser user)
+void fillfile(infuser user) //function to fill the file by the infomation of user after his registration to store it
 {
-    fileinformation.open(filename,ios::app);
+    fileinformation.open(filename,ios::app);//here the file open as append to append on it with not effecting on its data  
     fileinformation<<user.ID<<endl;
     fileinformation<<user.email<<endl;
     fileinformation<<user.password<<endl;
@@ -52,12 +52,12 @@ void fillfile(infuser user)
     fileinformation.close();
 }
 //-------------------------------------------------------------------------------------------------------------------------------------
-bool checkID(infuser &user)
+bool checkID(infuser &user) 
 {
     cout<<"please enter unique ID: "<<endl;
     cin>>user.ID;
     regex format("[0-9]+");
-    return regex_match(user.ID,format)&&(mapinfusers.count(user.ID)==0);
+    return regex_match(user.ID,format)&&(mapinfusers.count(user.ID)==0); //to match the ID of user by rules of regex and check that it not exit before in the map
 }
 //--------------------------------------------------------------------------------------------------------------------------------------
 bool checkusername(infuser &user)
@@ -66,55 +66,56 @@ bool checkusername(infuser &user)
     cin.ignore();
     getline(cin,user.username);
     regex format("[a-zA-Z_]+");
-    return regex_match(user.username,format);
+    return regex_match(user.username,format); //to match the username of user by rules of regex
 }
 //--------------------------------------------------------------------------------------------------------------------------------------
-bool existinformation(string information)
+bool existinformation(string information) // this function to check if the string given information exits in the map as a value or not
 {
     fileinformation.open(filename,ios::in);string line;
     while(!fileinformation.eof())
     {
         getline(fileinformation,line);
         if(information==line){
-            return false;
+            return false; // if the information exits in the map as a value return false 
         }
     }
     fileinformation.close();
-    return true;
+    return true; //if the information doesn't exit in the map as a value
 }
 bool checkemail(infuser &user)
 {
     cout<<"please enter your email and must contain digits or letters and after that @ and domain then .com only\n";
     cin>>user.email;
     regex format("(([a-z-#!%$‘&_+*–/=?^_`{|}~]+)[.]{0,1}([a-z-#!%$‘&_+*–/=?^_`{|}~]+))+@([a-z-#!%$‘&_+*–/=?^_`{|}~]+)[.]{0,1}([a-z-#!%$‘&_+*–/=?^_`{|}~]+))+\.com");
-    return regex_match(user.email,format)&&existinformation(user.email);
+    return regex_match(user.email,format)&&existinformation(user.email); //to match the user email and check if it doesn't exit before
 }
 //---------------------------------------------------------------------------------------------------------------------------------------------
-void encryptpassword(string &password)
+void encryptpassword(string &password) //this function to encrypt the password after ensure that it follows the rules of program and before storing it in the file
 {
     for(int i=0;i<password.size();i++){
         password[i]=char(int(password[i])+1);
     }
 }
 //-----------------------------------------------------------------------------
-string inp_invispass(string &password)
+string inp_invispass(string &password) // this function to make the user input the password as invisible string word 
 {
     char character;
-    while((character=getch())!='\r'){
+    while((character=getch())!='\r'){ //to check if the user enter button enter or not (the ascii of enter is 13 or can write it as '\r' that means enter)
 
-        if(character==8){
-            if(password!=""){
-                password.pop_back();
-                cout<<character<<" "<<character;
+        if(character==8){ //to check if the user enter backspace (the ascii of backspace is 8)
+            if(password!=""){ //if the user enter backspace then we check if we are in beginning of the password or not 
+                password.pop_back(); //if we aren't in the start then we remove character from the string 
+                cout<<character<<" "<<character; //here character has value backspace that he wants to return one step so we return step to the last star
+		    				// and write space to remove this star and then we come back again to write in it what user wants 
             }
         }
-        else{
+        else{ //if the user doesn't enter backspace then we will store the character value in the string password and print star (*)
             password+=character;
             cout<<"*";
         }
     }
     cout<<endl;
-    return password;
+    return password; //here we return the value after enter it to variable userpassword to take its value and it has changed too because it sended as reference
 }
 //--------------------------------------------------------------------------------
 bool checkpassword(string &userpassword)
@@ -126,7 +127,7 @@ bool checkpassword(string &userpassword)
         regex format("(?=.*[a-zA-Z])(?=.*[@#$&%*!-_])(?=.*[0-9])[a-zA-Z0-9@#$&%*!-_]{10,}");
         state=regex_match(userpassword,format);
     }
-    while(state){
+    while(state){ //this function to make the user enter the password again
         cout<<"please repeat the password again correctly\n";
         repeatedpass=inp_invispass(repeatedpass);
         if(repeatedpass==userpassword){
@@ -142,12 +143,13 @@ bool checkmobile(infuser &user)
     cout<<"please enter your mobil: "<<endl;
     cin>>user.mobile;
     regex format("01[0125][0-9]{8}");
-    return regex_match(user.mobile,format);
+    return regex_match(user.mobile,format); //to check the match of user mobile
 }
 //---------------------------------------------------------------------------------------------------------------------------------------------------
 void to_register(infuser &user)
 {
-    while(!checkID(user)){};
+    //this loops to make the user enter his data correctly
+    while(!checkID(user)){};  
     while(!checkemail(user)){};
     while(!checkpassword(user.password)){};
     while(!checkusername(user)){};
@@ -167,9 +169,10 @@ void to_login(infuser &user)
 {
     while(true){
         cout<<"please enter your ID and your password that already exist in this system"<<endl;
-        cin>>user.ID;
-        user.password=inp_invispass(user.password);encryptpassword(user.password);
-        if((mapinfusers.count(user.ID)>0) && (mapinfusers[user.ID].password==user.password))
+        cin>>user.ID; 
+        user.password=inp_invispass(user.password);//to make the user enter the password invisible
+	encryptpassword(user.password); //to encrypt the password to match it to the password in the file by his ID
+        if((mapinfusers.count(user.ID)>0) && (mapinfusers[user.ID].password==user.password))//if his ID is exit already and entered password is matching to his ID'password
         {
             cout<<"Successful login, welcome xxx his name xxx."<<endl;
             break;
@@ -183,26 +186,29 @@ void to_login(infuser &user)
 //----------------------------------------------------------------------------------------------------------------------------------------
 void to_change_password(infuser &user)
 {
-    to_login(user);string oldpassword=user.password,newpassword;
-    while(!checkpassword(newpassword)){};
+    to_login(user); //we check if the user register in this system already or not by to login by his account
+    string oldpassword=user.password,newpassword;
+    while(!checkpassword(newpassword)){}; //after the user enter his account by old password we check matching his new password as correct or not
     fileinformation.open(filename,ios::in);string line1,line2,line3,line4,line5;
-    storingfile.open("forstoringdata.txt",ios::out);
-    while(!fileinformation.eof())
+    storingfile.open("forstoringdata.txt",ios::out); //we create new temporary file to store all data from the old file but replace old password by new
+    while(!fileinformation.eof()) //this while to loop on all lines in the file of users information 
     {
+	//here we take every time five lines by fives lines that represent the information for one user and we check on the line of password that exist in line3
         getline(fileinformation,line1);
         getline(fileinformation,line2);
         getline(fileinformation,line3);
         getline(fileinformation,line4);
         getline(fileinformation,line5);
-        storingfile<<line1<<endl;
+        storingfile<<line1<<endl; //we always store the lines of user ID and email to new file
         storingfile<<line2<<endl;
-        if(line3==oldpassword){
+        if(line3==oldpassword){ //this if condition to find the line of old user'password to replace it by new password in new file
             storingfile<<newpassword<<endl;
             storingfile<<line4<<endl;
             storingfile<<line5<<endl;
             break;
         }
         else{
+		//if the line3(of passwords) didn't equal old password then store password and username and mobile as  such
             storingfile<<line3<<endl;
             storingfile<<line4<<endl;
             storingfile<<line5<<endl;
@@ -213,14 +219,14 @@ void to_change_password(infuser &user)
 
     fileinformation.open(filename,ios::out);
     storingfile.open("forstoringdata.txt",ios::in);
-    while(!storingfile.eof())
+    while(!storingfile.eof()) //this while loop to store all data from the temporary file to main old file 
     {
         getline(storingfile,line1);
         fileinformation<<line1<<endl;
     }
     storingfile.close();
     fileinformation.close();
-    remove("forstoringdata.txt");
+    remove("forstoringdata.txt"); //here we remove the temporary file
     cout<<"the changing for your password is done "<<endl;
 }
 //----------------------------------------------------------------------------------------------------------------------------------------
@@ -280,117 +286,3 @@ int main()
         else cout<<"the option you entered is't correct ";
     }
 }
-/*
-
-#include <iostream>
-#include <map>
-#include <fstream>
-#include <regex>
-#include <string>
-using namespace std;
-fstream userinformf;
-void storfile();
-void checkformate(regex e, string& u, string thing);
-void stormap();
-void foundEmail(string& s);
-struct userinfor {
-	string ID;
-	string username;
-	string  password;
-	string email;
-	string mobilenumber;
-};
-userinfor getinfor();
-int main() {
-	storfile();
-}
-
-void storfile(){
-	userinfor x = getinfor();
-	userinformf.open("userinformation.txt", ios::app);
-	userinformf << x.ID << endl;
-	userinformf << x.email << endl;
-	userinformf << x.password << endl;
-	userinformf << x.username << endl;
-	userinformf << x.mobilenumber << endl;
-	userinformf.close();
-}
-userinfor getinfor() {
-	userinfor user;
-	string str;
-	cout << "please enter user name has only – or letters\n";
-	getline(cin,str);
-	//e1 is a valid username format
-	regex e1("[-]*[a-z]+[-]*[a-z]*", regex_constants::icase);
-	checkformate(e1, str, "user name");
-	user.username = str;
-
-	cout << "\nplease enter password\n";
-	getline(cin, user.password);
-	
-	cout << "\nplease enter email\n";
-	getline(cin, str);
-	//regex e2("[a-z]+[^.]{0,1}@", regex_constants::icase);
-	//regex e2("[^.]{1}([a-z]*)([ #!\%\$‘&]*)([.]*)([.]{0,1})[[:w:]]*@[[:w:]]+\.com");
-	regex e2("[a-z]+", regex_constants::icase);
-	foundEmail(str);
-	checkformate(e2, str, " email");
-	user.email = str;
-
-	cout << "\nplease enter mobile number\n";
-	//e3 is a valid mobile number format
-	regex e3("01[0125]+[0-9]{8}");
-	getline(cin, str);
-	checkformate(e3, str, "mobile number");
-	user.mobilenumber = str;
-
-	cout << "\nplease enter ID\n";
-	getline(cin, user.ID);
-	return user;
-}
-map<string, string>m;
-
-void stormap() {
-	while (!userinformf.eof()) {
-		string key, value, line;
-		getline(userinformf, line);
-		getline(userinformf, key);
-		getline(userinformf, line);
-		getline(userinformf, value);
-		getline(userinformf, line);
-		m[key] = value;
-	}
-}
-
-void foundEmail(string& s) {
-	userinformf.open("userinformation.txt", ios::in);
-	if (userinformf.fail()) {
-		userinformf.close();
-		userinformf.open("userinformation.txt", ios::out);
-		userinformf.close();
-	}
-	else {
-		stormap();
-		while (m.count(s)) {
-		cout << "this email is already regested please enter another ";
-		getline(cin, s);
-		}
-	}
-}
-
-void checkformate(regex e,string& u,string thing) {
-	while(true){
-
-		bool match = regex_match(u, e);
-		if (match) {
-			break;
-		}
-		else {
-			cout << "please enter a valid "<<thing<<"\n";
-			getline(cin, u);
-		}
-	} 
-}
-
-
-*/
