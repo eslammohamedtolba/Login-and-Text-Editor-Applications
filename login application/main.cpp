@@ -241,14 +241,17 @@ void Forgot_Password()
     if(option==1){
         cout<<"please enter your email which already exist in this system"<<endl;
         cin>>information;
-        if(!existinformation(information)){
-
+        if(!existinformation(information)){ //to check that user email is exist already 
+		
+		//your code to send message by email as otp...........
         }
     }
     else if(option==2){
         cout<<"please enter your mobile which already exist in this system"<<endl;
         cin>>information;
-        if(!existinformation(information)){
+        if(!existinformation(information)){ //to check that user mobile is exist already 
+		
+		//your code to send message by SMS................
         }
     }
     else cout<<"your option isn't exist .try again"<<endl;
