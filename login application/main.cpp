@@ -6,7 +6,6 @@
 // Author3 and ID and Group: xxxxx xxxxx
 // Teaching Assistant: xxxxx xxxxx
 // Purpose:..........
-//#include <bits/stdc++.h>
 #include <iostream>
 #include <map>
 #include <regex>
@@ -194,6 +193,7 @@ void to_change_password(infuser &user)
         storingfile<<line1<<endl; //we always store the lines of user ID and email to new file
         storingfile<<line2<<endl;
         if(line3==oldpassword){ //this if condition to find the line of old user'password to replace it by new password in new file
+            encryptpassword(newpassword);
             storingfile<<newpassword<<endl;
             storingfile<<line4<<endl;
             storingfile<<line5<<endl;
