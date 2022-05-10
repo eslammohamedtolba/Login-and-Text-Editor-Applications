@@ -6,20 +6,23 @@
 // Author3 and ID and Group: xxxxx xxxxx
 // Teaching Assistant: xxxxx xxxxx
 // Purpose:..........
-#include <bits/stdc++.h>
-#include<conio.h>
-#include<string>>
-#include<fstream>
+//#include <bits/stdc++.h>
+#include <iostream>
+#include <map>
+#include <regex>
+#include <conio.h>
+#include <string>>
+#include <fstream>
 using namespace std;
 //------------------------------------------------------------------------------------------------------------------------------------
-fstream fileinformation,storingfile;string filename="user informations.txt";//to create the file and its name 
-struct infuser  //to create the struct that will contain the user information 
+fstream fileinformation,storingfile;string filename="user informations.txt";//to create the file and its name
+struct infuser  //to create the struct that will contain the user information
 {
     string ID,email,password,username,mobile;
 };
 map<string,infuser>mapinfusers;
 //-------------------------------------------------------------------------------------------------------------------------------------
-void fillmapinfusers() //function to fill the map by the values that exist in the file by run the program or register the 
+void fillmapinfusers() //function to fill the map by the values that exist in the file by run the program or register the
 {
     fileinformation.open(filename,ios::in);string line1,line2,line3,line4,line5;
     while(!fileinformation.eof())
@@ -43,7 +46,7 @@ void fillmapinfusers() //function to fill the map by the values that exist in th
 //------------------------------------------------------------------------------------------------------------------------------------
 void fillfile(infuser user) //function to fill the file by the infomation of user after his registration to store it
 {
-    fileinformation.open(filename,ios::app);//here the file open as append to append on it with not effecting on its data  
+    fileinformation.open(filename,ios::app);//here the file open as append to append on it with not effecting on its data
     fileinformation<<user.ID<<endl;
     fileinformation<<user.email<<endl;
     fileinformation<<user.password<<endl;
@@ -52,21 +55,21 @@ void fillfile(infuser user) //function to fill the file by the infomation of use
     fileinformation.close();
 }
 //-------------------------------------------------------------------------------------------------------------------------------------
-bool checkID(infuser &user) 
+bool checkID(string &ID)
 {
     cout<<"please enter unique ID: "<<endl;
-    cin>>user.ID;
+    cin>>ID;
     regex format("[0-9]+");
-    return regex_match(user.ID,format)&&(mapinfusers.count(user.ID)==0); //to match the ID of user by rules of regex and check that it not exit before in the map
+    return regex_match(ID,format)&&(mapinfusers.count(ID)==0); //to match the ID of user by rules of regex and check that it not exit before in the map
 }
 //--------------------------------------------------------------------------------------------------------------------------------------
-bool checkusername(infuser &user)
+bool checkusername(string &username)
 {
     cout<<"please enter your new user name and must contain letters and underscore(_) only\n";
     cin.ignore();
-    getline(cin,user.username);
+    getline(cin,username);
     regex format("[a-zA-Z_]+");
-    return regex_match(user.username,format); //to match the username of user by rules of regex
+    return regex_match(username,format); //to match the username of user by rules of regex
 }
 //--------------------------------------------------------------------------------------------------------------------------------------
 bool existinformation(string information) // this function to check if the string given information exits in the map as a value or not
@@ -76,84 +79,73 @@ bool existinformation(string information) // this function to check if the strin
     {
         getline(fileinformation,line);
         if(information==line){
-            return false; // if the information exits in the map as a value return false 
+            return false; // if the information exits in the map as a value return false
         }
     }
     fileinformation.close();
     return true; //if the information doesn't exit in the map as a value
 }
-bool checkemail(infuser &user)
+bool checkemail(string &email)
 {
     cout<<"please enter your email and must contain digits or letters and after that @ and domain then .com only\n";
-    cin>>user.email;
-    regex format("(([a-z-#!%$‘&_+*–/=?^_`{|}~]+)[.]{0,1}([a-z-#!%$‘&_+*–/=?^_`{|}~]+))+@([a-z-#!%$‘&_+*–/=?^_`{|}~]+)[.]{0,1}([a-z-#!%$‘&_+*–/=?^_`{|}~]+))+\.com");
-    return regex_match(user.email,format)&&existinformation(user.email); //to match the user email and check if it doesn't exit before
+    cin>>email;
+    regex format("[[:w:]]+@[[:w:]]+.com");
+    return ((regex_match(email,format))&&existinformation(email)); //to match the user email and check if it doesn't exit before
 }
-//---------------------------------------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------------------------------------------
 void encryptpassword(string &password) //this function to encrypt the password after ensure that it follows the rules of program and before storing it in the file
 {
     for(int i=0;i<password.size();i++){
         password[i]=char(int(password[i])+1);
     }
 }
-//-----------------------------------------------------------------------------
-string inp_invispass(string &password) // this function to make the user input the password as invisible string word 
+//-----------------------------------------------------------------------------------------------------------
+string inp_invispass()
 {
-    char character;
-    while((character=getch())!='\r'){ //to check if the user enter button enter or not (the ascii of enter is 13 or can write it as '\r' that means enter)
+    char character;string password;
+    while((character=getch())!='\r'){//to check if the user enter button enter or not (the ascii of enter is 13 or can write it as '\r' that means enter)
 
-        if(character==8){ //to check if the user enter backspace (the ascii of backspace is 8)
-            if(password!=""){ //if the user enter backspace then we check if we are in beginning of the password or not 
-                password.pop_back(); //if we aren't in the start then we remove character from the string 
-                cout<<character<<" "<<character; //here character has value backspace that he wants to return one step so we return step to the last star
-		    				// and write space to remove this star and then we come back again to write in it what user wants 
+        if(character==8){//to check if the user enter backspace (the ascii of backspace is 8)
+            if(password!=""){ //if the user enter backspace then we check if we are in beginning of the password or not
+                password.pop_back();//if we aren't in the start then we remove character from the string
+                cout<<character<<" "<<character;//here character has value backspace that he wants to return one step so we return step to the last star
             }
         }
-        else{ //if the user doesn't enter backspace then we will store the character value in the string password and print star (*)
+        else{//if the user doesn't enter backspace then we will store the character value in the string password and print star (*)
             password+=character;
             cout<<"*";
         }
     }
     cout<<endl;
-    return password; //here we return the value after enter it to variable userpassword to take its value and it has changed too because it was sent as reference
+    return password;//here we return the value after enter it to variable userpassword to take its value and it has changed too because it was sent as reference
 }
-//--------------------------------------------------------------------------------
-bool checkpassword(string &userpassword)
+//------------------------------------------------------------------------------------------------------------
+bool checkpassword(string &password)
 {
-    bool state=false;string repeatedpass;
-    while(!state){
-        cout<<"please enter your password of length 10 and must contain at least one from digits and letters and symbols only\n";
-        userpassword=inp_invispass(userpassword);
-        regex format("(?=.*[a-zA-Z])(?=.*[@#$&%*!-_])(?=.*[0-9])[a-zA-Z0-9@#$&%*!-_]{10,}");
-        state=regex_match(userpassword,format);
-    }
-    while(state){ //this function to make the user enter the password again
-        cout<<"please repeat the password again correctly\n";
-        repeatedpass=inp_invispass(repeatedpass);
-        if(repeatedpass==userpassword){
-            state=false;
-        }
-    }
-    encryptpassword(userpassword);
-    return true;
+    regex format("(?=.*[!@#$%])(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9!@#$%]{10,}");string repeatpassword;
+    cout<<"please enter the password that contains at least one of letter and digit and symbol"<<endl;
+    password=inp_invispass();
+    cout<<"please repeat your password again"<<endl;
+    repeatpassword=inp_invispass();
+    return regex_match(password,format)&&regex_match(repeatpassword,format)&&(password==repeatpassword);
 }
 //---------------------------------------------------------------------------------------------------------------------------------------------------
-bool checkmobile(infuser &user)
+bool checkmobile(string &mobile)
 {
     cout<<"please enter your mobil: "<<endl;
-    cin>>user.mobile;
+    cin>>mobile;
     regex format("01[0125][0-9]{8}");
-    return regex_match(user.mobile,format); //to check the match of user mobile
+    return regex_match(mobile,format); //to check the match of user mobile
 }
 //---------------------------------------------------------------------------------------------------------------------------------------------------
 void to_register(infuser &user)
 {
     //this loops to make the user enter his data correctly
-    while(!checkID(user)){};  
-    while(!checkemail(user)){};
+    while(!checkID(user.ID)){};
+    while(!checkemail(user.email)){};
     while(!checkpassword(user.password)){};
-    while(!checkusername(user)){};
-    while(!checkmobile(user)){};
+    while(!checkusername(user.username)){};
+    while(!checkmobile(user.mobile)){};
     /*
     cout<<user.ID<<endl;
     cout<<user.email<<endl;
@@ -161,7 +153,7 @@ void to_register(infuser &user)
     cout<<user.username<<endl;
     cout<<user.mobile<<endl;
     */
-    fillfile(user);fillmapinfusers();
+    encryptpassword(user.password);fillfile(user);fillmapinfusers();
     cout<<"the registration completed successfully"<<endl;
 }
 //---------------------------------------------------------------------------------------------------------------------------------------
@@ -169,9 +161,9 @@ void to_login(infuser &user)
 {
     while(true){
         cout<<"please enter your ID and your password that already exist in this system"<<endl;
-        cin>>user.ID; 
-        user.password=inp_invispass(user.password);//to make the user enter the password invisible
-	encryptpassword(user.password); //to encrypt the password to match it to the password in the file by his ID
+        cin>>user.ID;
+        user.password=inp_invispass();//to make the user enter the password invisible
+        encryptpassword(user.password); //to encrypt the password to match it to the password in the file by his ID
         if((mapinfusers.count(user.ID)>0) && (mapinfusers[user.ID].password==user.password))//if his ID is exit already and entered password is matching to his ID'password
         {
             cout<<"Successful login, welcome xxx his name xxx."<<endl;
@@ -191,7 +183,7 @@ void to_change_password(infuser &user)
     while(!checkpassword(newpassword)){}; //after the user enter his account by old password we check matching his new password as correct or not
     fileinformation.open(filename,ios::in);string line1,line2,line3,line4,line5;
     storingfile.open("forstoringdata.txt",ios::out); //we create new temporary file to store all data from the old file but replace old password by new
-    while(!fileinformation.eof()) //this while to loop on all lines in the file of users information 
+    while(!fileinformation.eof()) //this while to loop on all lines in the file of users information
     {
 	//here we take every time five lines by fives lines that represent the information for one user and we check on the line of password that exist in line3
         getline(fileinformation,line1);
@@ -219,7 +211,7 @@ void to_change_password(infuser &user)
 
     fileinformation.open(filename,ios::out);
     storingfile.open("forstoringdata.txt",ios::in);
-    while(!storingfile.eof()) //this while loop to store all data from the temporary file to main old file 
+    while(!storingfile.eof()) //this while loop to store all data from the temporary file to main old file
     {
         getline(storingfile,line1);
         fileinformation<<line1<<endl;
@@ -241,16 +233,16 @@ void Forgot_Password()
     if(option==1){
         cout<<"please enter your email which already exist in this system"<<endl;
         cin>>information;
-        if(!existinformation(information)){ //to check that user email is exist already 
-		
+        if(!existinformation(information)){ //to check that user email is exist already
+
 		//your code to send message by email as otp...........
         }
     }
     else if(option==2){
         cout<<"please enter your mobile which already exist in this system"<<endl;
         cin>>information;
-        if(!existinformation(information)){ //to check that user mobile is exist already 
-		
+        if(!existinformation(information)){ //to check that user mobile is exist already
+
 		//your code to send message by SMS................
         }
     }
