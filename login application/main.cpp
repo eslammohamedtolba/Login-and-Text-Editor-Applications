@@ -88,7 +88,7 @@ bool checkemail(string &email)
 {
     cout<<"please enter your email and must contain digits or letters and after that @ and domain then .com only\n";
     cin>>email;
-    regex format("[[:w:]]+@[[:w:]]+.com");
+    regex format("(([a-z-#!%$‘&_+,*–/=?^_`{|}~]+)[.]{0,1}([a-z-#,!%$‘&_+*–/=?^_`{|}~]+))+@(([a-z-#!%$‘,&_+*–/=?^_`{|}~]+)[.]{0,1}([a-z-#!%$‘,&_+*–/=?^_`{|}~]+))+\.com", regex_constants::icase);
     return ((regex_match(email,format))&&existinformation(email)); //to match the user email and check if it doesn't exit before
 }
 //---------------------------------------------------------------------------------------------------------------------------------------------------------
