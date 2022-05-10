@@ -244,7 +244,7 @@ void countwordrepetition(fstream& file, string file_name)
     file.open(file_name, ios::in); int repetition = 0; string wordsearch, line, word;
     cout << "what is the word you want to know repetition number of it" << endl;
     cin >> wordsearch; tolowercase(wordsearch);
-    while (getline(file, line)) { //this while loop to take from the file line by line and each time stores it in variable line 
+    while (getline(file, line)) { //this while loop to take from the file line by line and each time stores it in variable line
         istringstream iss;
         iss.str(line);
         while (iss.good()) {
@@ -290,25 +290,36 @@ void turnfircharupper(fstream& file, string file_name)
 {
     file.open(file_name, ios::in);
     string filecontent, line, word;
-    while (getline(file, line)) //this while loop to take from file line by line 
+    while (getline(file, line)) //this while loop to take from file line by line
     {
         istringstream iss;
         iss.str(line);
         while (iss.good())
         {
-            iss >> word; //this expression to take from each line word by word 
-            tofirstupper(word, filecontent); // this function to store in the variable filecontent each word but the first letter from each word as uppercase and 
+            iss >> word; //this expression to take from each line word by word
+            tofirstupper(word, filecontent); // this function to store in the variable filecontent each word but the first letter from each word as uppercase and
                                             //all rest is lowercase
         }
         filecontent += "\n";
     }
     file.close();
     file.open(file_name, ios::out);
-    file << filecontent; //here we file the file by its content one more time after changes 
+    file << filecontent; //here we file the file by its content one more time after changes
     file.close();
 }
 //-----------------------------------------------------------------------------------------------------------------------------------
-void savefile(fstream& file, string file_name)
+void saveoldfilecontent(fstream &file,string file_name,string &oldfilecontent)
+{
+    string line;
+    file.open(file_name,ios::in);
+    while (getline(file, line))
+        {
+            oldfilecontent += line + "\n";
+        }
+    file.close();
+}
+//-----------------------------------------------------------------------------------------------------------------------------------
+void savefile(fstream& file, string file_name,string &oldfilecontent)
 {
     int choice;
     cout << "where is you want to save the file\n"
@@ -317,39 +328,49 @@ void savefile(fstream& file, string file_name)
         ">>>> ";
     cin >> choice;
     if (choice == 1) { //in the same file (same name)
-        cout << "the modifications are applied in the same file :)" << endl;//if the user chooses the option of saving in the same file then the file changed already
+        cout << "the modifications are applied in the same file :)" << endl;//if the user chooses the option of saving in the same file then the file changed and saved already
+        saveoldfilecontent(file,file_name,oldfilecontent); //to save current content of file to variable oldfilecontent
     }
     else if (choice == 2) { //another file (different name)
         string newnamefile, newfilecontent, line; fstream newfile;
         cout << "please enter the file name to deal with" << endl; cin.ignore();
         getline(cin, newnamefile);
-        if (newnamefile.substr(newnamefile.size() - 4, newnamefile.size() - 1) != ".txt")
-        {
+
+        if (newnamefile.size() < 4) {
             newnamefile += ".txt";
         }
+        else {
+            if (newnamefile.substr(newnamefile.size() - 4, newnamefile.size() - 1) != ".txt") {
+                newnamefile += ".txt";
+            }
+        }
         newfile.open(newnamefile);
-        if (newfile.fail()) //if the name of new file doesn't exist then we will create file for him 
+        if (newfile.fail()) //if the name of new file doesn't exist then we will create file for him
         {
             newfile.open(newnamefile, ios::out);
             cout << "This is a new file. I created it for you\n";
         }
-        newfile.close();
+        newfile.close();file.open(file_name,ios::in);
         while (getline(file, line)) //this while loop to transfer all content from the file to variable newfilecontent
             {
-                newfilecontent += line + "\n";//
+                newfilecontent += line + "\n";
             }
         file.close();
         newfile.open(newnamefile, ios::out);
-        newfile << newfilecontent;
+        newfile << newfilecontent; //we open new file to add new modified content to it
         newfile.close();
+        file.open(file_name,ios::out); //we open old file to add its old content
+        file << oldfilecontent;
+        file.close();
         cout << "the modifications are applied in different file named " << newnamefile << " :)" << endl;
     }
 }
 //------------------------------------------------------------------------------------------------------------------------------------
 int main()
 {
-    fstream filemodified; string file_name;
+    fstream filemodified; string file_name,oldfilecontent;
     load_file(filemodified, file_name);
+    saveoldfilecontent(filemodified,file_name,oldfilecontent);
     bool state = true; int option;
     while (state) {
         cout << "what do you want to do\n"
@@ -403,7 +424,7 @@ int main()
             break;
         case 14:turnfircharupper(filemodified, file_name);
             break;
-        case 15:savefile(filemodified, file_name);
+        case 15:savefile(filemodified, file_name,oldfilecontent);
             break;
         case 16:state = false;
             break;
