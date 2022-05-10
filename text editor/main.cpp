@@ -316,10 +316,10 @@ void savefile(fstream& file, string file_name)
         "(2)to save in the different file\n"
         ">>>> ";
     cin >> choice;
-    if (choice == 1) {
-        cout << "the modifications are applied in the same file :)" << endl;
+    if (choice == 1) { //in the same file (same name)
+        cout << "the modifications are applied in the same file :)" << endl;//if the user chooses the option of saving in the same file then the file changed already
     }
-    else if (choice == 2) {
+    else if (choice == 2) { //another file (different name)
         string newnamefile, newfilecontent, line; fstream newfile;
         cout << "please enter the file name to deal with" << endl; cin.ignore();
         getline(cin, newnamefile);
@@ -328,21 +328,16 @@ void savefile(fstream& file, string file_name)
             newnamefile += ".txt";
         }
         newfile.open(newnamefile);
-        if (newfile.fail())
+        if (newfile.fail()) //if the name of new file doesn't exist then we will create file for him 
         {
             newfile.open(newnamefile, ios::out);
             cout << "This is a new file. I created it for you\n";
         }
         newfile.close();
-        file.open(file_name, ios::in);
-        if (file.is_open())
-        {
-            while (getline(file, line))
+        while (getline(file, line)) //this while loop to transfer all content from the file to variable newfilecontent
             {
-                newfilecontent += line + "\n";
+                newfilecontent += line + "\n";//
             }
-        }
-
         file.close();
         newfile.open(newnamefile, ios::out);
         newfile << newfilecontent;
