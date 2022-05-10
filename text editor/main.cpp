@@ -244,13 +244,13 @@ void countwordrepetition(fstream& file, string file_name)
     file.open(file_name, ios::in); int repetition = 0; string wordsearch, line, word;
     cout << "what is the word you want to know repetition number of it" << endl;
     cin >> wordsearch; tolowercase(wordsearch);
-    while (getline(file, line)) {
+    while (getline(file, line)) { //this while loop to take from the file line by line and each time stores it in variable line 
         istringstream iss;
         iss.str(line);
         while (iss.good()) {
-            iss >> word; tolowercase(word);
+            iss >> word; tolowercase(word); //this expression to take from each line word by word and stores it in variable word
             if (word == wordsearch) {
-                repetition++;
+                repetition++; //if the any word from the file equals to the user's wanted word then the variable increases by one
             }
         }
     }
@@ -262,13 +262,13 @@ void turntoupper(fstream& file, string file_name)
 {
     file.open(file_name, ios::in);
     string filecontent, line;
-    while (getline(file, line)) {
-        filecontent += line + "\n";
+    while (getline(file, line)) { //this while loop to take from the file line by line
+        filecontent += line + "\n"; //to transfer the line by line from file to variable filecontent and after each line endl to transfer all content file as such
     }
     file.close();
-    touppercase(filecontent);
+    touppercase(filecontent); //here to convert all data of variable to uppercase
     file.open(file_name, ios::out);
-    file << filecontent;
+    file << filecontent; //here we file the file by its content one more time but as uppercase
     file.close();
 }
 //------------------------------------------------------------------------------------------------------------------------------------
@@ -276,13 +276,13 @@ void turntolower(fstream& file, string file_name)
 {
     file.open(file_name, ios::in);
     string filecontent, line;
-    while (getline(file, line)) {
-        filecontent += line + "\n";
+    while (getline(file, line)) { //this while loop to take from the file line by line and store it in variable line
+        filecontent += line + "\n"; //to transfer the line by line from file to variable filecontent and after each line endl to transfer all content file as such
     }
     file.close();
-    tolowercase(filecontent);
+    tolowercase(filecontent); //here to convert all data of variable to lowercase
     file.open(file_name, ios::out);
-    file << filecontent;
+    file << filecontent; //here we file the file by its content one more time but as lowercase
     file.close();
 }
 //-----------------------------------------------------------------------------------------------------------------------------------
@@ -290,20 +290,21 @@ void turnfircharupper(fstream& file, string file_name)
 {
     file.open(file_name, ios::in);
     string filecontent, line, word;
-    while (getline(file, line))
+    while (getline(file, line)) //this while loop to take from file line by line 
     {
         istringstream iss;
         iss.str(line);
         while (iss.good())
         {
-            iss >> word;
-            tofirstupper(word, filecontent);
+            iss >> word; //this expression to take from each line word by word 
+            tofirstupper(word, filecontent); // this function to store in the variable filecontent each word but the first letter from each word as uppercase and 
+                                            //all rest is lowercase
         }
         filecontent += "\n";
     }
     file.close();
     file.open(file_name, ios::out);
-    file << filecontent;
+    file << filecontent; //here we file the file by its content one more time after changes 
     file.close();
 }
 //-----------------------------------------------------------------------------------------------------------------------------------
