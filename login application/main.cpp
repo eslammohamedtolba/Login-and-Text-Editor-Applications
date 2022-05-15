@@ -123,9 +123,11 @@ bool checkpassword(string &password)
 {
     regex format("(?=.*[!@#$%])(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9!@#$%]{10,}");string repeatpassword;
     cout<<"please enter the password that contains at least one of letter and digit and symbol"<<endl;
-    password=inp_invispass();
+    //password=inp_invispass();
+    cin>>password;
     cout<<"please repeat your password again"<<endl;
-    repeatpassword=inp_invispass();
+    //repeatpassword=inp_invispass();
+    cin>>repeatpassword;
     return regex_match(password,format)&&regex_match(repeatpassword,format)&&(password==repeatpassword);
 }
 //---------------------------------------------------------------------------------------------------------------------------------------------------
