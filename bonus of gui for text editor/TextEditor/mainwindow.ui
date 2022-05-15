@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1506</width>
+    <height>765</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background:rgb(201,101,0);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="pushButton_Add_text">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>140</y>
+      <width>191</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius:7px;
+border:1px solid grey;
+background:teal;
+color:white</string>
+    </property>
+    <property name="text">
+     <string>add text</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Display_content">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>140</y>
+      <width>191</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius:7px;
+border:1px solid grey;
+background:teal;
+color:white</string>
+    </property>
+    <property name="text">
+     <string>Display file content</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Empty_file">
+    <property name="geometry">
+     <rect>
+      <x>780</x>
+      <y>140</y>
+      <width>191</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius:7px;
+border:1px solid grey;
+background:teal;
+color:white</string>
+    </property>
+    <property name="text">
+     <string>Empty your file</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Encrypt_file">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>570</y>
+      <width>191</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius:7px;
+border:1px solid grey;
+background:teal;
+color:white</string>
+    </property>
+    <property name="text">
+     <string>Encrypt your file </string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Decrypt_file">
+    <property name="geometry">
+     <rect>
+      <x>1030</x>
+      <y>570</y>
+      <width>191</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius:7px;
+border:1px solid grey;
+background:teal;
+color:white</string>
+    </property>
+    <property name="text">
+     <string>Decrypt your file</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_count_words">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>430</y>
+      <width>191</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius:7px;
+border:1px solid grey;
+background:teal;
+color:white</string>
+    </property>
+    <property name="text">
+     <string>count file words</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_count_characters">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>430</y>
+      <width>191</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius:7px;
+border:1px solid grey;
+background:teal;
+color:white</string>
+    </property>
+    <property name="text">
+     <string>count file characters</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_count_lines">
+    <property name="geometry">
+     <rect>
+      <x>780</x>
+      <y>430</y>
+      <width>191</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius:7px;
+border:1px solid grey;
+background:teal;
+color:white</string>
+    </property>
+    <property name="text">
+     <string>count file lines</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_count_repeatword">
+    <property name="geometry">
+     <rect>
+      <x>1030</x>
+      <y>430</y>
+      <width>191</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius:7px;
+border:1px solid grey;
+background:teal;
+color:white</string>
+    </property>
+    <property name="text">
+     <string>count repeat of your word</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_searchword">
+    <property name="geometry">
+     <rect>
+      <x>1030</x>
+      <y>290</y>
+      <width>191</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius:7px;
+border:1px solid grey;
+background:teal;
+color:white</string>
+    </property>
+    <property name="text">
+     <string>search about your word</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_toupper">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>280</y>
+      <width>191</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius:7px;
+border:1px solid grey;
+background:teal;
+color:white</string>
+    </property>
+    <property name="text">
+     <string>convert content toupper</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_tolower">
+    <property name="geometry">
+     <rect>
+      <x>780</x>
+      <y>290</y>
+      <width>191</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius:7px;
+border:1px solid grey;
+background:teal;
+color:white</string>
+    </property>
+    <property name="text">
+     <string>convert content tolower</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_merge2files">
+    <property name="geometry">
+     <rect>
+      <x>1030</x>
+      <y>140</y>
+      <width>191</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius:7px;
+border:1px solid grey;
+background:teal;
+color:white</string>
+    </property>
+    <property name="text">
+     <string>merge your two files</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_firsttoupper">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>280</y>
+      <width>191</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius:7px;
+border:1px solid grey;
+background:teal;
+color:white</string>
+    </property>
+    <property name="text">
+     <string>convert first character toupper</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_save">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>570</y>
+      <width>191</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius:7px;
+border:1px solid grey;
+background:teal;
+color:white</string>
+    </property>
+    <property name="text">
+     <string>Save</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_exit">
+    <property name="geometry">
+     <rect>
+      <x>780</x>
+      <y>570</y>
+      <width>191</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius:7px;
+border:1px solid grey;
+background:teal;
+color:white</string>
+    </property>
+    <property name="text">
+     <string>Exit</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>30</y>
+      <width>371</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label_filename">
+       <property name="styleSheet">
+        <string notr="true">color:white;
+font:10pt &quot;Century Gothic&quot;;
+</string>
+       </property>
+       <property name="text">
+        <string>please enter your file name </string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineEdit_filename">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1506</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
