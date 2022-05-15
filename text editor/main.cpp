@@ -7,6 +7,8 @@
 // Teaching Assistant: Eng.Afaf Abelmonem
 // Purpose:this application applys some modifications on files that the user enters
 #include "header.h"
+#include "Source code.cpp"
+
 int main()
 {
     fstream filemodified; string file_name,oldfilecontent;
