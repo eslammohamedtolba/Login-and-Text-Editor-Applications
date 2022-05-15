@@ -13,9 +13,4 @@
 #include <fstream>
 #include<cctype>
 using namespace std;
-
-
-
-
-
 #endif // HEADER_H_INCLUDED

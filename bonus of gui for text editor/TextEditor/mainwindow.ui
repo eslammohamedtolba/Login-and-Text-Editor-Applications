@@ -334,7 +334,7 @@ color:white</string>
      <item>
       <widget class="QLabel" name="label_filename">
        <property name="styleSheet">
-        <string notr="true">color:white;
+        <string notr="true">color:black;
 font:10pt &quot;Century Gothic&quot;;
 </string>
        </property>
