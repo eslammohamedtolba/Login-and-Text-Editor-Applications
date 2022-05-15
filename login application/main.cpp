@@ -123,11 +123,9 @@ bool checkpassword(string &password)
 {
     regex format("(?=.*[!@#$%])(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9!@#$%]{10,}");string repeatpassword;
     cout<<"please enter the password that contains at least one of letter and digit and symbol"<<endl;
-    //password=inp_invispass();
-    cin>>password;
+    password=inp_invispass();
     cout<<"please repeat your password again"<<endl;
-    //repeatpassword=inp_invispass();
-    cin>>repeatpassword;
+    repeatpassword=inp_invispass();
     return regex_match(password,format)&&regex_match(repeatpassword,format)&&(password==repeatpassword);
 }
 //---------------------------------------------------------------------------------------------------------------------------------------------------
@@ -161,13 +159,16 @@ void to_register(infuser &user)
 void to_login(infuser &user)
 {
     while(true){
-        cout<<"please enter your ID and your password that already exist in this system"<<endl;
+        cout<<"please enter your ID that already exists in this system : ";
         cin>>user.ID;
+        cout<<"please enter your password that already exists in this system : ";
         user.password=inp_invispass();//to make the user enter the password invisible
         encryptpassword(user.password); //to encrypt the password to match it to the password in the file by his ID
+        cout<<"mapinfusers.count(user.ID)>0 = "<<(mapinfusers.count(user.ID)>0)<<endl;
+        cout<<"mapinfusers[user.ID].password = "<<mapinfusers[user.ID].password<<endl;
         if((mapinfusers.count(user.ID)>0) && (mapinfusers[user.ID].password==user.password))//if his ID is exit already and entered password is matching to his ID'password
         {
-            cout<<"Successful login, welcome xxx his name xxx."<<endl;
+            cout<<"Successful login, welcome "<<mapinfusers[user.ID].username<<endl;
             break;
         }
         else{
