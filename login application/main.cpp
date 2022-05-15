@@ -164,8 +164,6 @@ void to_login(infuser &user)
         cout<<"please enter your password that already exists in this system : ";
         user.password=inp_invispass();//to make the user enter the password invisible
         encryptpassword(user.password); //to encrypt the password to match it to the password in the file by his ID
-        cout<<"mapinfusers.count(user.ID)>0 = "<<(mapinfusers.count(user.ID)>0)<<endl;
-        cout<<"mapinfusers[user.ID].password = "<<mapinfusers[user.ID].password<<endl;
         if((mapinfusers.count(user.ID)>0) && (mapinfusers[user.ID].password==user.password))//if his ID is exit already and entered password is matching to his ID'password
         {
             cout<<"Successful login, welcome "<<mapinfusers[user.ID].username<<endl;
