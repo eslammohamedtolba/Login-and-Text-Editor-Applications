@@ -102,7 +102,7 @@ void encryptpassword(string& password) //this function to encrypt the password a
 string inp_invispass()
 {
     char character; string password;
-    while ((character = getch()) != '\r') {//to check if the user enter button enter or not (the ascii of enter is 13 or can write it as '\r' that means enter)
+    while ((character = _getch()) != '\r') {//to check if the user enter button enter or not (the ascii of enter is 13 or can write it as '\r' that means enter)
 
         if (character == 8) {//to check if the user enter backspace (the ascii of backspace is 8)
             if (password != "") { //if the user enter backspace then we check if we are in beginning of the password or not
