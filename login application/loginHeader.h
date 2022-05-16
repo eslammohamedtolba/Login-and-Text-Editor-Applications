@@ -8,12 +8,11 @@
 #include <fstream>
 using namespace std;
 //------------------------------------------------------------------------------------------------------------------------------------
-fstream fileinformation, storingfile; string filename = "user informations.txt";//to create the file and its name
 struct infuser  //to create the struct that will contain the user information
 {
     string ID, email, password, username, mobile;
+   
 };
-map<string, infuser>mapinfusers;
 //-------------------------------------------------------------------------------------------------------------------------------------
 void fillmapinfusers();
 void fillfile(infuser user);
