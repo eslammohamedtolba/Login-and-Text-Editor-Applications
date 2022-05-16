@@ -223,33 +223,6 @@ void to_change_password(infuser& user)
     cout << "the changing for your password is done " << endl;
 }
 //----------------------------------------------------------------------------------------------------------------------------------------
-void Forgot_Password()
-{
-    int option; string information;
-    cout << "what is the way you want to return your acount in this system"
-        "(1) email"
-        "(2) mobile"
-        ">>>>>> ";
-    cin >> option;
-    if (option == 1) {
-        cout << "please enter your email which already exist in this system" << endl;
-        cin >> information;
-        if (!existinformation(information)) { //to check that user email is exist already
-
-        //your code to send message by email as otp...........
-        }
-    }
-    else if (option == 2) {
-        cout << "please enter your mobile which already exist in this system" << endl;
-        cin >> information;
-        if (!existinformation(information)) { //to check that user mobile is exist already
-
-        //your code to send message by SMS................
-        }
-    }
-    else cout << "your option isn't exist .try again" << endl;
-}
-//----------------------------------------------------------------------------------------------------------------------------------------
 int main()
 {
     infuser user;
@@ -260,8 +233,7 @@ int main()
             "(1) Register\n"
             "(2) Login\n"
             "(3) Change Password\n"
-            "(4) Forgot Password\n"
-            "(5) Exit\n"
+            "(4) Exit\n"
             ">>>> ";
         cin >> option;
         if (option == 1) {
@@ -274,9 +246,6 @@ int main()
             to_change_password(user);
         }
         else if (option == 4) {
-            Forgot_Password();
-        }
-        else if (option == 5) {
             state = false;
         }
         else cout << "the option you entered is't correct "; //if the user didn't enter the available options then we tell him that and to reselect another option
