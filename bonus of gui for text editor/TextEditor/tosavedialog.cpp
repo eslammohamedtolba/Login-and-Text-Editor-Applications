@@ -11,6 +11,10 @@ TosaveDialog::TosaveDialog(QWidget *parent) :
 {
     ui->setupUi(this);
     setWindowTitle("Save file");
+    ui->lineEdit_save->setEnabled(false);
+    ui->pushButton_save->setEnabled(false);
+    ui->pushButton_save->setStyleSheet("background-color: rgb(170,170,170);border-radius:7px;border:1px solid grey;color:white");
+
 }
 
 TosaveDialog::~TosaveDialog()
@@ -26,21 +30,7 @@ TosaveDialog::TosaveDialog(QString file_name,QString fileoldcontent,QWidget *par
 
 void TosaveDialog::on_pushButton_save_clicked()
 {
-    if(ui->radioButton_same->isChecked()){
-        QFile file(myfilename);
-        if(!file.open(QFile::ReadOnly | QFile::Text)){
-            qCritical()<<"the first file not exit, I created it for you";
-            qCritical()<<file.errorString();
-            return;
-        }
-        QTextStream out(&file);
-        while(!out.atEnd()){
-            myfilecontent=out.readLine();
-            myfilecontent.push_back("\n");
-        }
-        file.close();
-    }
-    else{
+    if(ui->radioButton_different->isChecked()){
         QString diffefileoldcontent;
         QFile file(myfilename);
         if(!file.open(QFile::ReadOnly | QFile::Text)){
@@ -77,4 +67,34 @@ void TosaveDialog::on_pushButton_save_clicked()
     }
     this->close();
 }
+
+void TosaveDialog::on_lineEdit_save_textChanged(const QString &arg1)
+{
+   if(!ui->lineEdit_save->text().isEmpty()){
+       ui->pushButton_save->setEnabled(true);
+       ui->pushButton_save->setStyleSheet("background-color: teal;border-radius:7px;border:1px solid grey;color:white");
+   }
+   else{
+       ui->pushButton_save->setEnabled(false);
+       ui->pushButton_save->setStyleSheet("background-color: rgb(170,170,170);border-radius:7px;border:1px solid grey;color:white");
+   }
+}
+
+void TosaveDialog::on_radioButton_different_pressed()
+{
+    ui->pushButton_save->setEnabled(false);
+    ui->pushButton_save->setStyleSheet("background-color: rgb(170,170,170);border-radius:7px;border:1px solid grey;color:white");
+    ui->lineEdit_save->setEnabled(true);
+}
+
+
+void TosaveDialog::on_radioButton_same_pressed()
+{
+     ui->lineEdit_save->setText("");
+     ui->lineEdit_save->setEnabled(false);
+     ui->pushButton_save->setEnabled(true);
+     ui->pushButton_save->setStyleSheet("background-color: teal;border-radius:7px;border:1px solid grey;color:white");
+
+}
+
 

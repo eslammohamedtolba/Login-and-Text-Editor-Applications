@@ -12,6 +12,9 @@ RepeatwDialog::RepeatwDialog(QWidget *parent) :
 {
     ui->setupUi(this);
     setWindowTitle("Count word repetition");
+    ui->pushButton_repeatword->setEnabled(false);
+    ui->pushButton_repeatword->setStyleSheet("background-color: rgb(170,170,170);border-radius:7px;border:1px solid grey;color:white");
+
 }
 
 RepeatwDialog::~RepeatwDialog()
@@ -19,9 +22,23 @@ RepeatwDialog::~RepeatwDialog()
     delete ui;
 }
 
+
 RepeatwDialog::RepeatwDialog(QString file_name,QWidget *parent) :RepeatwDialog(parent)
 {
     myfilename=file_name;
+}
+
+void RepeatwDialog::on_lineEdit_searchword_textChanged(const QString &arg1)
+{
+    if(!ui->lineEdit_searchword->text().isEmpty()){
+        ui->pushButton_repeatword->setEnabled(true);
+        ui->pushButton_repeatword->setStyleSheet("background-color: teal;border-radius:7px;border:1px solid grey;color:white");
+
+    }
+    else{
+        ui->pushButton_repeatword->setEnabled(false);
+        ui->pushButton_repeatword->setStyleSheet("background-color: rgb(170,170,170);border-radius:7px;border:1px solid grey;color:white");
+        }
 }
 
 void RepeatwDialog::on_pushButton_repeatword_clicked()

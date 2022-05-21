@@ -66,6 +66,8 @@ private slots:
 
     void on_lineEdit_filename_editingFinished();
 
+    void on_lineEdit_filename_textChanged(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
     SecDialog *dialogwrite;

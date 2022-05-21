@@ -21,7 +21,12 @@ public:
 private slots:
     void on_pushButton_merge_clicked();
 
+    void on_lineEdit_second_textChanged(const QString &arg1);
+
+    void on_lineEdit_namthirdfile_textChanged(const QString &arg1);
+
 private:
+    bool bol1,bol2;
     QString myfilename;
     Ui::FourthDialog *ui;
 };

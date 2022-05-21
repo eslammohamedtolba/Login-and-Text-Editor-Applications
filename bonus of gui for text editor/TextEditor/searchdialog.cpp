@@ -11,11 +11,27 @@ SearchDialog::SearchDialog(QWidget *parent) :
 {
     ui->setupUi(this);
     setWindowTitle("Search about word in file");
+    ui->pushButton_search->setEnabled(false);
+    ui->pushButton_search->setStyleSheet("background-color: rgb(170,170,170);border-radius:7px;border:1px solid grey;color:white");
+
 }
 
 SearchDialog::~SearchDialog()
 {
     delete ui;
+}
+
+void SearchDialog::on_lineEdit_search_textChanged(const QString &arg1)
+{
+    if(!ui->lineEdit_search->text().isEmpty()){
+        ui->pushButton_search->setEnabled(true);
+        ui->pushButton_search->setStyleSheet("background-color: teal;border-radius:7px;border:1px solid grey;color:white");
+
+    }
+    else{
+        ui->pushButton_search->setEnabled(false);
+        ui->pushButton_search->setStyleSheet("background-color: rgb(170,170,170);border-radius:7px;border:1px solid grey;color:white");
+        }
 }
 
 SearchDialog::SearchDialog(QString file_name,QWidget *parent):SearchDialog(parent)

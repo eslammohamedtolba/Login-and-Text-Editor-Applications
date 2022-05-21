@@ -12,6 +12,9 @@ FourthDialog::FourthDialog(QWidget *parent) :
 {
     ui->setupUi(this);
     setWindowTitle("Merge two files");
+    ui->pushButton_merge->setEnabled(false);
+    ui->pushButton_merge->setStyleSheet("background-color: rgb(170,170,170);border-radius:7px;border:1px solid grey;color:white");
+
 }
 
 FourthDialog::~FourthDialog()
@@ -23,6 +26,7 @@ FourthDialog::FourthDialog(QString file_name,QWidget *parent) :FourthDialog(pare
 {
     myfilename=file_name;
 }
+
 
 void FourthDialog::on_pushButton_merge_clicked()
 {
@@ -68,3 +72,44 @@ void FourthDialog::on_pushButton_merge_clicked()
     file3.close();
     this->close();
 }
+
+
+void FourthDialog::on_lineEdit_second_textChanged(const QString &arg1)
+{
+    if(!ui->lineEdit_second->text().isEmpty()){
+        bol1=true;
+    }
+    else{
+        bol1=false;
+    }
+    if(bol1==true && bol2==true){
+        ui->pushButton_merge->setEnabled(true);
+        ui->pushButton_merge->setStyleSheet("background-color: teal;border-radius:7px;border:1px solid grey;color:white");
+    }
+    else{
+        ui->pushButton_merge->setEnabled(false);
+        ui->pushButton_merge->setStyleSheet("background-color: rgb(170,170,170);border-radius:7px;border:1px solid grey;color:white");
+    }
+}
+
+
+void FourthDialog::on_lineEdit_namthirdfile_textChanged(const QString &arg1)
+{
+    if(!ui->lineEdit_namthirdfile->text().isEmpty()){
+        bol2=true;
+    }
+    else{
+        bol2=false;
+    }
+
+    if(bol1==true && bol2==true){
+        ui->pushButton_merge->setEnabled(true);
+        ui->pushButton_merge->setStyleSheet("background-color: teal;border-radius:7px;border:1px solid grey;color:white");
+
+    }
+    else{
+        ui->pushButton_merge->setEnabled(false);
+        ui->pushButton_merge->setStyleSheet("background-color: rgb(170,170,170);border-radius:7px;border:1px solid grey;color:white");
+    }
+}
+

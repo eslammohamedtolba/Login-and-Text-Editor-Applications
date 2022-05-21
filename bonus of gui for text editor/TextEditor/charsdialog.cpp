@@ -43,7 +43,7 @@ void CharsDialog::countchars()
             }
         }
     }
-    ui->lineEdit_countchars->setText("the line in file are "+QString::number(countcharas));
+    ui->lineEdit_countchars->setText("the number of characters in this file are "+QString::number(countcharas));
     file.close();
 }
 

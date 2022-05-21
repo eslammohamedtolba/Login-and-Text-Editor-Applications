@@ -21,6 +21,12 @@ public:
 private slots:
     void on_pushButton_save_clicked();
 
+    void on_radioButton_different_pressed();
+
+    void on_radioButton_same_pressed();
+
+    void on_lineEdit_save_textChanged(const QString &arg1);
+
 private:
     QString myfilename;
     QString myfilecontent;

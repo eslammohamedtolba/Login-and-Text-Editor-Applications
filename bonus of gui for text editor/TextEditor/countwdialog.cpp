@@ -43,7 +43,7 @@ void CountwDialog::countwords()
                 }
             }
         }
-    ui->lineEdit_countwords->setText("the words in file are "+QString::number(countwords));
+    ui->lineEdit_countwords->setText("the nmber of words in this file are "+QString::number(countwords));
     file.close();
 }
 

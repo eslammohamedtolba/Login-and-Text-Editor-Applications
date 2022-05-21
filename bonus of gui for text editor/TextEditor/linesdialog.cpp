@@ -40,7 +40,7 @@ void LinesDialog::countlines()
             countlines++;
         }
     }
-    ui->lineEdit_countlines->setText("the line in file are "+QString::number(countlines));
+    ui->lineEdit_countlines->setText("the number of lines in this file are "+QString::number(countlines));
     file.close();
 }
 
