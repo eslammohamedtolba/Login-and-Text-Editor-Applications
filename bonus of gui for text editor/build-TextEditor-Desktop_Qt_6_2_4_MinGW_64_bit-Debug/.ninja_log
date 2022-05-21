@@ -1,93 +1,45 @@
 # ninja log v5
-27	794	6741178851014043	TextEditor_autogen/timestamp	2bbbc8a0a89e1817
-824	17297	6741179015419719	CMakeFiles/TextEditor.dir/mainwindow.cpp.obj	539b53af36a4401c
-27	794	6741178851014043	TextEditor_autogen/mocs_compilation.cpp	2bbbc8a0a89e1817
-8221	23484	6741168439049433	CMakeFiles/TextEditor.dir/main.cpp.obj	72caac724c730f9
-833	15506	6741178997420000	CMakeFiles/TextEditor.dir/charsdialog.cpp.obj	8d9bbc60f262cddc
-8228	23137	6741168436021158	CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.obj	ad2b5e4e953dca57
-27	794	6741178851014043	C:/Users/hp/Downloads/Qt applications/applications/build-TextEditor-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/TextEditor_autogen/timestamp	2bbbc8a0a89e1817
-26746	27676	6741179119787781	TextEditor.exe	90e6730cff526b8a
-27	794	6741178851014043	C:/Users/hp/Downloads/Qt applications/applications/build-TextEditor-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/TextEditor_autogen/mocs_compilation.cpp	2bbbc8a0a89e1817
-829	16882	6741179011292030	CMakeFiles/TextEditor.dir/secdialog.cpp.obj	f7ee7cd6007ecdae
-817	16915	6741179011751815	CMakeFiles/TextEditor.dir/thirddialog.cpp.obj	17e2ca463213e651
-15507	26144	6741179104528510	CMakeFiles/TextEditor.dir/fourthdialog.cpp.obj	e8f3ce7d97da50f2
-846	16257	6741179004406069	CMakeFiles/TextEditor.dir/searchdialog.cpp.obj	ed1a76f9e2444f0b
-840	15649	6741178998989082	CMakeFiles/TextEditor.dir/linesdialog.cpp.obj	b0cf7896afa2a6c9
-15650	25945	6741179102529663	CMakeFiles/TextEditor.dir/countwdialog.cpp.obj	663911167d6b7f4b
-16883	26746	6741179110575098	CMakeFiles/TextEditor.dir/repeatwdialog.cpp.obj	eb1a5855cb9dcb69
-16257	24993	6741179092955156	CMakeFiles/TextEditor.dir/tosavedialog.cpp.obj	d7082f7e3ade6b83
-54	1654	6741201173971150	TextEditor_autogen/timestamp	2bbbc8a0a89e1817
-54	1654	6741201173971150	TextEditor_autogen/mocs_compilation.cpp	2bbbc8a0a89e1817
-54	1654	6741201173971150	C:/Users/hp/Downloads/Qt applications/applications/build-TextEditor-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/TextEditor_autogen/timestamp	2bbbc8a0a89e1817
-54	1654	6741201173971150	C:/Users/hp/Downloads/Qt applications/applications/build-TextEditor-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/TextEditor_autogen/mocs_compilation.cpp	2bbbc8a0a89e1817
-1704	25252	6741201408516539	CMakeFiles/TextEditor.dir/linesdialog.cpp.obj	b0cf7896afa2a6c9
-1721	25563	6741201411774900	CMakeFiles/TextEditor.dir/charsdialog.cpp.obj	8d9bbc60f262cddc
-1729	26701	6741201423457962	CMakeFiles/TextEditor.dir/fourthdialog.cpp.obj	e8f3ce7d97da50f2
-1700	27367	6741201429974214	CMakeFiles/TextEditor.dir/secdialog.cpp.obj	f7ee7cd6007ecdae
-1689	27714	6741201433312313	CMakeFiles/TextEditor.dir/mainwindow.cpp.obj	539b53af36a4401c
-1684	28213	6741201438769391	CMakeFiles/TextEditor.dir/thirddialog.cpp.obj	17e2ca463213e651
-25256	44875	6741201606103174	CMakeFiles/TextEditor.dir/searchdialog.cpp.obj	ed1a76f9e2444f0b
-25563	45431	6741201611739915	CMakeFiles/TextEditor.dir/repeatwdialog.cpp.obj	eb1a5855cb9dcb69
-26702	45796	6741201615437779	CMakeFiles/TextEditor.dir/countwdialog.cpp.obj	663911167d6b7f4b
-27367	46083	6741201618276157	CMakeFiles/TextEditor.dir/tosavedialog.cpp.obj	d7082f7e3ade6b83
-46084	47856	6741201635876187	TextEditor.exe	90e6730cff526b8a
-46	1338	6741477319822433	TextEditor_autogen/timestamp	2bbbc8a0a89e1817
-46	1338	6741477319822433	TextEditor_autogen/mocs_compilation.cpp	2bbbc8a0a89e1817
-46	1338	6741477319822433	C:/Users/hp/Downloads/Qt applications/applications/build-TextEditor-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/TextEditor_autogen/timestamp	2bbbc8a0a89e1817
-46	1338	6741477319822433	C:/Users/hp/Downloads/Qt applications/applications/build-TextEditor-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/TextEditor_autogen/mocs_compilation.cpp	2bbbc8a0a89e1817
-1350	12380	6741477429599559	CMakeFiles/TextEditor.dir/thirddialog.cpp.obj	17e2ca463213e651
-1357	12539	6741477429749518	CMakeFiles/TextEditor.dir/secdialog.cpp.obj	f7ee7cd6007ecdae
-1411	12619	6741477429949358	CMakeFiles/TextEditor.dir/fourthdialog.cpp.obj	e8f3ce7d97da50f2
-1361	12676	6741477429919376	CMakeFiles/TextEditor.dir/searchdialog.cpp.obj	ed1a76f9e2444f0b
-1407	12707	6741477429889404	CMakeFiles/TextEditor.dir/linesdialog.cpp.obj	b0cf7896afa2a6c9
-1354	12725	6741477431818283	CMakeFiles/TextEditor.dir/mainwindow.cpp.obj	539b53af36a4401c
-12381	19158	6741477497970329	CMakeFiles/TextEditor.dir/charsdialog.cpp.obj	8d9bbc60f262cddc
-12620	19258	6741477499049708	CMakeFiles/TextEditor.dir/repeatwdialog.cpp.obj	eb1a5855cb9dcb69
-12540	19306	6741477499529427	CMakeFiles/TextEditor.dir/tosavedialog.cpp.obj	d7082f7e3ade6b83
-12677	19656	6741477502747600	CMakeFiles/TextEditor.dir/countwdialog.cpp.obj	663911167d6b7f4b
-19667	20648	6741477512918967	TextEditor.exe	90e6730cff526b8a
-14	474	6741480929068957	TextEditor_autogen/timestamp	2bbbc8a0a89e1817
-14	474	6741480929068957	TextEditor_autogen/mocs_compilation.cpp	2bbbc8a0a89e1817
-14	474	6741480929068957	C:/Users/hp/Downloads/Qt applications/applications/build-TextEditor-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/TextEditor_autogen/timestamp	2bbbc8a0a89e1817
-14	474	6741480929068957	C:/Users/hp/Downloads/Qt applications/applications/build-TextEditor-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/TextEditor_autogen/mocs_compilation.cpp	2bbbc8a0a89e1817
-501	10185	6741481025523397	CMakeFiles/TextEditor.dir/charsdialog.cpp.obj	8d9bbc60f262cddc
-505	10286	6741481026582787	CMakeFiles/TextEditor.dir/fourthdialog.cpp.obj	e8f3ce7d97da50f2
-508	10352	6741481027542230	CMakeFiles/TextEditor.dir/searchdialog.cpp.obj	ed1a76f9e2444f0b
-488	10849	6741481031479977	CMakeFiles/TextEditor.dir/thirddialog.cpp.obj	17e2ca463213e651
-493	10859	6741481032229547	CMakeFiles/TextEditor.dir/mainwindow.cpp.obj	539b53af36a4401c
-497	10867	6741481032529380	CMakeFiles/TextEditor.dir/secdialog.cpp.obj	f7ee7cd6007ecdae
-10186	16732	6741481091455567	CMakeFiles/TextEditor.dir/linesdialog.cpp.obj	b0cf7896afa2a6c9
-10352	16917	6741481093464402	CMakeFiles/TextEditor.dir/repeatwdialog.cpp.obj	eb1a5855cb9dcb69
-10287	17112	6741481095443263	CMakeFiles/TextEditor.dir/tosavedialog.cpp.obj	d7082f7e3ade6b83
-10850	17168	6741481096012953	CMakeFiles/TextEditor.dir/countwdialog.cpp.obj	663911167d6b7f4b
-17169	17987	6741481104108283	TextEditor.exe	90e6730cff526b8a
-16	792	6742827388863599	TextEditor_autogen/timestamp	2bbbc8a0a89e1817
-16	792	6742827388863599	TextEditor_autogen/mocs_compilation.cpp	2bbbc8a0a89e1817
-16	792	6742827388863599	C:/Users/hp/Downloads/Qt applications/applications/build-TextEditor-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/TextEditor_autogen/timestamp	2bbbc8a0a89e1817
-16	792	6742827388863599	C:/Users/hp/Downloads/Qt applications/applications/build-TextEditor-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/TextEditor_autogen/mocs_compilation.cpp	2bbbc8a0a89e1817
-813	10534	6742827485817946	CMakeFiles/TextEditor.dir/thirddialog.cpp.obj	17e2ca463213e651
-824	10603	6742827485957865	CMakeFiles/TextEditor.dir/fourthdialog.cpp.obj	e8f3ce7d97da50f2
-816	10609	6742827485817946	CMakeFiles/TextEditor.dir/linesdialog.cpp.obj	b0cf7896afa2a6c9
-820	10614	6742827486647470	CMakeFiles/TextEditor.dir/searchdialog.cpp.obj	ed1a76f9e2444f0b
-806	10656	6742827487357075	CMakeFiles/TextEditor.dir/secdialog.cpp.obj	f7ee7cd6007ecdae
-809	10748	6742827487886763	CMakeFiles/TextEditor.dir/mainwindow.cpp.obj	539b53af36a4401c
-10609	16879	6742827549661301	CMakeFiles/TextEditor.dir/countwdialog.cpp.obj	663911167d6b7f4b
-10535	16953	6742827550460846	CMakeFiles/TextEditor.dir/charsdialog.cpp.obj	8d9bbc60f262cddc
-10615	16972	6742827550630753	CMakeFiles/TextEditor.dir/repeatwdialog.cpp.obj	eb1a5855cb9dcb69
-10604	16979	6742827550740691	CMakeFiles/TextEditor.dir/tosavedialog.cpp.obj	d7082f7e3ade6b83
-16980	18282	6742827563707008	TextEditor.exe	90e6730cff526b8a
-16	716	6742829640320048	TextEditor_autogen/timestamp	2bbbc8a0a89e1817
-16	716	6742829640320048	TextEditor_autogen/mocs_compilation.cpp	2bbbc8a0a89e1817
-16	716	6742829640320048	C:/Users/hp/Downloads/Qt applications/applications/build-TextEditor-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/TextEditor_autogen/timestamp	2bbbc8a0a89e1817
-16	716	6742829640320048	C:/Users/hp/Downloads/Qt applications/applications/build-TextEditor-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/TextEditor_autogen/mocs_compilation.cpp	2bbbc8a0a89e1817
-739	10005	6742829732426982	CMakeFiles/TextEditor.dir/fourthdialog.cpp.obj	e8f3ce7d97da50f2
-743	10063	6742829733436402	CMakeFiles/TextEditor.dir/searchdialog.cpp.obj	ed1a76f9e2444f0b
-747	10136	6742829734195958	CMakeFiles/TextEditor.dir/charsdialog.cpp.obj	8d9bbc60f262cddc
-729	10347	6742829736054892	CMakeFiles/TextEditor.dir/secdialog.cpp.obj	f7ee7cd6007ecdae
-732	10358	6742829736534622	CMakeFiles/TextEditor.dir/thirddialog.cpp.obj	17e2ca463213e651
-735	10601	6742829738873295	CMakeFiles/TextEditor.dir/mainwindow.cpp.obj	539b53af36a4401c
-10005	16299	6742829795910554	CMakeFiles/TextEditor.dir/linesdialog.cpp.obj	b0cf7896afa2a6c9
-10137	16492	6742829798079308	CMakeFiles/TextEditor.dir/tosavedialog.cpp.obj	d7082f7e3ade6b83
-10064	16514	6742829798289184	CMakeFiles/TextEditor.dir/repeatwdialog.cpp.obj	eb1a5855cb9dcb69
-10348	16548	6742829798648975	CMakeFiles/TextEditor.dir/countwdialog.cpp.obj	663911167d6b7f4b
-16548	17336	6742829806444713	TextEditor.exe	90e6730cff526b8a
+26	4225	6747985172385298	TextEditor_autogen/timestamp	2bbbc8a0a89e1817
+4234	15753	6747985294205439	CMakeFiles/TextEditor.dir/mainwindow.cpp.obj	539b53af36a4401c
+26	4225	6747985172385298	TextEditor_autogen/mocs_compilation.cpp	2bbbc8a0a89e1817
+4230	13154	6747985268610124	CMakeFiles/TextEditor.dir/main.cpp.obj	72caac724c730f9
+13431	22811	6747985364914896	CMakeFiles/TextEditor.dir/charsdialog.cpp.obj	8d9bbc60f262cddc
+4226	13430	6747985271118679	CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.obj	ad2b5e4e953dca57
+26	4225	6747985172385298	C:/Users/hp/Downloads/Qt applications/applications/build-TextEditor-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/TextEditor_autogen/timestamp	2bbbc8a0a89e1817
+29151	29901	6747985436358926	TextEditor.exe	dd79887b269b43c
+35916	47367	6745337454896143	CMakeFiles/TextEditor.dir/mfirstcharup.cpp.obj	4e916df952f8b5f8
+26	4225	6747985172385298	C:/Users/hp/Downloads/Qt applications/applications/build-TextEditor-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/TextEditor_autogen/mocs_compilation.cpp	2bbbc8a0a89e1817
+4238	15773	6747985294515258	CMakeFiles/TextEditor.dir/secdialog.cpp.obj	f7ee7cd6007ecdae
+4241	15529	6747985292446436	CMakeFiles/TextEditor.dir/thirddialog.cpp.obj	17e2ca463213e651
+15443	24864	6747985385593035	CMakeFiles/TextEditor.dir/fourthdialog.cpp.obj	e8f3ce7d97da50f2
+4245	15349	6747985290617488	CMakeFiles/TextEditor.dir/searchdialog.cpp.obj	ed1a76f9e2444f0b
+22620	28287	6747985420283116	CMakeFiles/TextEditor.dir/tofirstupper.cpp.obj	e324e867803bfe51
+13155	22619	6747985363095933	CMakeFiles/TextEditor.dir/linesdialog.cpp.obj	b0cf7896afa2a6c9
+15773	24969	6747985386772332	CMakeFiles/TextEditor.dir/countwdialog.cpp.obj	663911167d6b7f4b
+15530	25060	6747985387561886	CMakeFiles/TextEditor.dir/repeatwdialog.cpp.obj	eb1a5855cb9dcb69
+15754	25080	6747985388001632	CMakeFiles/TextEditor.dir/tosavedialog.cpp.obj	d7082f7e3ade6b83
+22812	28395	6747985421382502	CMakeFiles/TextEditor.dir/emptydialog.cpp.obj	e58e635ef388283a
+24865	29150	6747985428948138	CMakeFiles/TextEditor.dir/toupperwords.cpp.obj	b5be4bb0917472a8
+89	8850	6748011065503552	TextEditor_autogen/timestamp	2bbbc8a0a89e1817
+89	8850	6748011065503552	TextEditor_autogen/mocs_compilation.cpp	2bbbc8a0a89e1817
+89	8850	6748011065503552	C:/Users/hp/Downloads/Qt applications/applications/build-TextEditor-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/TextEditor_autogen/timestamp	2bbbc8a0a89e1817
+89	8850	6748011065503552	C:/Users/hp/Downloads/Qt applications/applications/build-TextEditor-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/TextEditor_autogen/mocs_compilation.cpp	2bbbc8a0a89e1817
+8852	16667	6748011146117333	CMakeFiles/TextEditor.dir/main.cpp.obj	72caac724c730f9
+8856	16735	6748011146746956	CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.obj	ad2b5e4e953dca57
+8872	18533	6748011164976507	CMakeFiles/TextEditor.dir/fourthdialog.cpp.obj	e8f3ce7d97da50f2
+8867	18791	6748011167525032	CMakeFiles/TextEditor.dir/thirddialog.cpp.obj	17e2ca463213e651
+8860	18799	6748011167475076	CMakeFiles/TextEditor.dir/secdialog.cpp.obj	f7ee7cd6007ecdae
+8863	19213	6748011171752612	CMakeFiles/TextEditor.dir/mainwindow.cpp.obj	539b53af36a4401c
+16668	25945	6748011239163953	CMakeFiles/TextEditor.dir/linesdialog.cpp.obj	b0cf7896afa2a6c9
+16736	26257	6748011242032308	CMakeFiles/TextEditor.dir/searchdialog.cpp.obj	ed1a76f9e2444f0b
+18534	28042	6748011260021996	CMakeFiles/TextEditor.dir/charsdialog.cpp.obj	8d9bbc60f262cddc
+18791	28480	6748011262360641	CMakeFiles/TextEditor.dir/countwdialog.cpp.obj	663911167d6b7f4b
+18800	28486	6748011262700461	CMakeFiles/TextEditor.dir/repeatwdialog.cpp.obj	eb1a5855cb9dcb69
+19214	28544	6748011264939170	CMakeFiles/TextEditor.dir/tosavedialog.cpp.obj	d7082f7e3ade6b83
+25945	33841	6748011317778864	CMakeFiles/TextEditor.dir/tofirstupper.cpp.obj	e324e867803bfe51
+26258	34184	6748011321576680	CMakeFiles/TextEditor.dir/tolowerwords.cpp.obj	6cffbad2bdeca3ce
+28043	35445	6748011334459298	CMakeFiles/TextEditor.dir/emptydialog.cpp.obj	e58e635ef388283a
+28480	35576	6748011335778530	CMakeFiles/TextEditor.dir/toupperwords.cpp.obj	b5be4bb0917472a8
+28487	35590	6748011335948442	CMakeFiles/TextEditor.dir/toencryptfile.cpp.obj	d5aa88b472e8fbb8
+28545	35610	6748011336138331	CMakeFiles/TextEditor.dir/todecryptfile.cpp.obj	542d4864cd05754d
+35611	36873	6748011348671129	TextEditor.exe	6ab8b1f5f5495c21

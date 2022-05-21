@@ -2,11 +2,11 @@
 #include "./ui_mainwindow.h"
 #include "QString"
 #include <QFile>
+#include "QStringList"
+#include "QChar"
 #include <QTextStream>
 #include <QFileDialog>
 #include "QMessageBox"
-//here are the global variables declared
-QString fileoldcontent="";
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -19,9 +19,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
-
-
 void MainWindow::on_lineEdit_filename_editingFinished()
 {
     QFile file(ui->lineEdit_filename->text()+".txt");
@@ -32,22 +29,25 @@ void MainWindow::on_lineEdit_filename_editingFinished()
     }
     QTextStream out(&file);
     while(!out.atEnd()){
-        fileoldcontent=out.readLine();
+        fileoldcontent.append(out.readLine());
         fileoldcontent.push_back("\n");
     }
+    file.close();
 }
 
 
 void MainWindow::on_pushButton_Add_text_clicked()
 {
-    dialogwrite=new SecDialog(this);
+    file_name=ui->lineEdit_filename->text()+".txt";
+    dialogwrite=new SecDialog(file_name,this);
     dialogwrite->show();
 }
 
 
 void MainWindow::on_pushButton_Display_content_clicked()
 {
-    dialogread=new ThirdDialog(this);
+    file_name=ui->lineEdit_filename->text()+".txt";
+    dialogread=new ThirdDialog(file_name,this);
     dialogread->show();
 }
 
@@ -55,6 +55,7 @@ void MainWindow::on_pushButton_Display_content_clicked()
 void MainWindow::on_pushButton_Empty_file_clicked()
 {
     QFile file(ui->lineEdit_filename->text()+".txt");
+
     if(!file.exists()){
         qCritical()<<"file not found";
         return;
@@ -64,12 +65,15 @@ void MainWindow::on_pushButton_Empty_file_clicked()
         return;
     }
     file.close();
+    emptyfile=new EmptyDialog(this);
+    emptyfile->show();
 }
 
 
 void MainWindow::on_pushButton_merge2files_clicked()
 {
-    dialogmerge=new FourthDialog(this);
+    file_name=ui->lineEdit_filename->text()+".txt";
+    dialogmerge=new FourthDialog(file_name,this);
     dialogmerge->show();
 }
 
@@ -82,21 +86,20 @@ void MainWindow::on_pushButton_firsttoupper_clicked()
         qCritical()<<file.errorString();
         return;
     }
-    QString word,filecontent;
+    QString line,filecontent;//QChar character;
     QTextStream out(&file);
-    while(!out.atEnd()) {
-            QString line = out.readLine();
-            if(!line.isEmpty()){
-                QStringList words = line.split(" ");
-                foreach(QString word, words){
-                   filecontent.append(word.toUpper().at(0)+word.toLower().mid(1,word.length()-1));
-                   filecontent.push_back(' ');
-                }
-                filecontent.push_back('\n');
-            }
-            else{
-                filecontent.push_back('\n');
-            }
+    while(!out.atEnd())
+    {
+        line=out.readLine();
+        QStringList words = line.split(" ");
+        foreach(QString word, words)
+        {
+            word=word.toLower();
+            filecontent.append(word.mid(0,1).toUpper());
+            filecontent.append(word.mid(1,word.length()));
+            filecontent.append(' ');
+        }
+        filecontent.append('\n');
     }
     file.close();
     QFile samefile(ui->lineEdit_filename->text()+".txt");
@@ -108,6 +111,8 @@ void MainWindow::on_pushButton_firsttoupper_clicked()
     QTextStream sameout(&samefile);
     sameout<<filecontent;
     samefile.close();
+    firsttoupper=new Tofirstupper(this);
+    firsttoupper->show();
 }
 
 
@@ -136,6 +141,8 @@ void MainWindow::on_pushButton_toupper_clicked()
     QTextStream sameout(&samefile);
     sameout<<filecontent;
     samefile.close();
+    toupperwords=new Toupperwords(this);
+    toupperwords->show();
 }
 
 
@@ -164,40 +171,47 @@ void MainWindow::on_pushButton_tolower_clicked()
     QTextStream sameout(&samefile);
     sameout<<filecontent;
     samefile.close();
+    tolowerwords=new Tolowerwords(this);
+    tolowerwords->show();
 }
 
 
 void MainWindow::on_pushButton_searchword_clicked()
 {
-    searchdialog =new SearchDialog(this);
+    file_name=ui->lineEdit_filename->text()+".txt";
+    searchdialog =new SearchDialog(file_name,this);
     searchdialog->show();
 }
 
 
 void MainWindow::on_pushButton_count_words_clicked()
 {
-   countwordsdia=new CountwDialog(this);
+   file_name=ui->lineEdit_filename->text()+".txt";
+   countwordsdia=new CountwDialog(file_name,this);
    countwordsdia->show();
 }
 
 
 void MainWindow::on_pushButton_count_characters_clicked()
 {
-    charsdialog =new CharsDialog(this);
+    file_name=ui->lineEdit_filename->text()+".txt";
+    charsdialog =new CharsDialog(file_name,this);
     charsdialog->show();
 }
 
 
 void MainWindow::on_pushButton_count_lines_clicked()
 {
-    linesdialog=new LinesDialog(this);
+    file_name=ui->lineEdit_filename->text()+".txt";
+    linesdialog=new LinesDialog(file_name,this);
     linesdialog->show();
 }
 
 
 void MainWindow::on_pushButton_count_repeatword_clicked()
 {
-    repeatworddia=new RepeatwDialog(this);
+    file_name=ui->lineEdit_filename->text()+".txt";
+    repeatworddia=new RepeatwDialog(file_name,this);
     repeatworddia->show();
 }
 
@@ -236,12 +250,15 @@ void MainWindow::on_pushButton_Encrypt_file_clicked()
     QTextStream sameout(&samefile);
     sameout<<filecontent;
     samefile.close();
+    toencryptfile=new Toencryptfile(this);
+    toencryptfile->show();
 }
 
 
 void MainWindow::on_pushButton_save_clicked()
 {
-    tosavefile=new TosaveDialog(this);
+    file_name=ui->lineEdit_filename->text()+".txt";
+    tosavefile=new TosaveDialog(file_name,fileoldcontent,this);
     tosavefile->show();
 }
 
@@ -280,11 +297,12 @@ void MainWindow::on_pushButton_Decrypt_file_clicked()
     QTextStream sameout(&samefile);
     sameout<<filecontent;
     samefile.close();
+    todecryptfile=new Todecryptfile(this);
+    todecryptfile->show();
 }
 
 
 void MainWindow::on_pushButton_exit_clicked()
 {
-    //hide();
     this->close();
 }

@@ -29,7 +29,7 @@ public:
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
     QLabel *label;
-    QLineEdit *lineEdit_merge;
+    QLineEdit *lineEdit_second;
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_2;
     QLineEdit *lineEdit_namthirdfile;
@@ -43,6 +43,10 @@ public:
         pushButton_merge = new QPushButton(FourthDialog);
         pushButton_merge->setObjectName(QString::fromUtf8("pushButton_merge"));
         pushButton_merge->setGeometry(QRect(230, 190, 161, 71));
+        pushButton_merge->setStyleSheet(QString::fromUtf8("border-radius:7px;\n"
+"border:1px solid grey;\n"
+"background:teal;\n"
+"color:white"));
         layoutWidget = new QWidget(FourthDialog);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
         layoutWidget->setGeometry(QRect(167, 100, 327, 56));
@@ -56,10 +60,11 @@ public:
 
         horizontalLayout->addWidget(label);
 
-        lineEdit_merge = new QLineEdit(layoutWidget);
-        lineEdit_merge->setObjectName(QString::fromUtf8("lineEdit_merge"));
+        lineEdit_second = new QLineEdit(layoutWidget);
+        lineEdit_second->setObjectName(QString::fromUtf8("lineEdit_second"));
+        lineEdit_second->setStyleSheet(QString::fromUtf8("background:rgb(255, 255, 255);"));
 
-        horizontalLayout->addWidget(lineEdit_merge);
+        horizontalLayout->addWidget(lineEdit_second);
 
 
         verticalLayout->addLayout(horizontalLayout);
@@ -73,6 +78,7 @@ public:
 
         lineEdit_namthirdfile = new QLineEdit(layoutWidget);
         lineEdit_namthirdfile->setObjectName(QString::fromUtf8("lineEdit_namthirdfile"));
+        lineEdit_namthirdfile->setStyleSheet(QString::fromUtf8("background:rgb(255, 255, 255);"));
 
         horizontalLayout_2->addWidget(lineEdit_namthirdfile);
 

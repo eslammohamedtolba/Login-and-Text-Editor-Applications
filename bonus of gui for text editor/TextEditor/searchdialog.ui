@@ -19,8 +19,8 @@
   <widget class="QPushButton" name="pushButton_search">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>120</y>
+     <x>340</x>
+     <y>40</y>
      <width>201</width>
      <height>61</height>
     </rect>
@@ -38,7 +38,7 @@ color:white</string>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>70</x>
+     <x>20</x>
      <y>60</y>
      <width>305</width>
      <height>24</height>
@@ -53,15 +53,19 @@ color:white</string>
      </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="lineEdit_search"/>
+     <widget class="QLineEdit" name="lineEdit_search">
+      <property name="styleSheet">
+       <string notr="true">background:rgb(255, 255, 255);</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>240</y>
+     <x>100</x>
+     <y>130</y>
      <width>311</width>
      <height>24</height>
     </rect>
@@ -70,7 +74,7 @@ color:white</string>
     <item>
      <widget class="QLabel" name="label_2">
       <property name="text">
-       <string>Repetition</string>
+       <string>existing</string>
       </property>
      </widget>
     </item>
@@ -79,9 +83,31 @@ color:white</string>
       <property name="enabled">
        <bool>false</bool>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background:rgb(255, 255, 255);</string>
+      </property>
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QPushButton" name="pushButton_toexit">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>180</y>
+     <width>101</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius:7px;
+border:1px solid grey;
+background:teal;
+color:white</string>
+   </property>
+   <property name="text">
+    <string>Done</string>
+   </property>
   </widget>
  </widget>
  <resources/>

@@ -427,6 +427,8 @@ TextEditor_autogen/timestamp: \
   C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/charsdialog.h \
   C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/countwdialog.cpp \
   C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/countwdialog.h \
+  C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/emptydialog.cpp \
+  C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/emptydialog.h \
   C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/fourthdialog.cpp \
   C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/fourthdialog.h \
   C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/linesdialog.cpp \
@@ -442,14 +444,25 @@ TextEditor_autogen/timestamp: \
   C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/secdialog.h \
   C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/thirddialog.cpp \
   C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/thirddialog.h \
+  C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/todecryptfile.cpp \
+  C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/todecryptfile.h \
+  C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/toencryptfile.cpp \
+  C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/toencryptfile.h \
+  C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/tofirstupper.cpp \
+  C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/tofirstupper.h \
+  C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/tolowerwords.cpp \
+  C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/tolowerwords.h \
   C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/tosavedialog.cpp \
   C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/tosavedialog.h \
+  C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/toupperwords.cpp \
+  C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/toupperwords.h \
   CMakeFiles/3.21.1/CMakeCXXCompiler.cmake \
   CMakeFiles/3.21.1/CMakeRCCompiler.cmake \
   CMakeFiles/3.21.1/CMakeSystem.cmake \
   TextEditor_autogen/moc_predefs.h \
   C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/charsdialog.ui \
   C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/countwdialog.ui \
+  C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/emptydialog.ui \
   C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/fourthdialog.ui \
   C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/linesdialog.ui \
   C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/mainwindow.ui \
@@ -457,5 +470,10 @@ TextEditor_autogen/timestamp: \
   C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/searchdialog.ui \
   C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/secdialog.ui \
   C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/thirddialog.ui \
+  C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/todecryptfile.ui \
+  C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/toencryptfile.ui \
+  C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/tofirstupper.ui \
+  C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/tolowerwords.ui \
   C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/tosavedialog.ui \
+  C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/toupperwords.ui \
   C:/Qt/Tools/CMake_64/bin/cmake.exe

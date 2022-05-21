@@ -15,10 +15,14 @@ public:
     explicit ThirdDialog(QWidget *parent = nullptr);
     ~ThirdDialog();
 
+public:
+    explicit ThirdDialog(QString file_name,QWidget *parent = nullptr);
+
 private slots:
     void on_pushButton_read_clicked();
 
 private:
+    QString myfilename;
     Ui::ThirdDialog *ui;
 };
 

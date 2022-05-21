@@ -13,6 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QPushButton>
 
 QT_BEGIN_NAMESPACE
 
@@ -20,6 +21,7 @@ class Ui_CountwDialog
 {
 public:
     QLineEdit *lineEdit_countwords;
+    QPushButton *pushButton_toexit;
 
     void setupUi(QDialog *CountwDialog)
     {
@@ -31,6 +33,14 @@ public:
         lineEdit_countwords->setObjectName(QString::fromUtf8("lineEdit_countwords"));
         lineEdit_countwords->setEnabled(false);
         lineEdit_countwords->setGeometry(QRect(150, 110, 271, 41));
+        lineEdit_countwords->setStyleSheet(QString::fromUtf8("background:rgb(255, 255, 255);"));
+        pushButton_toexit = new QPushButton(CountwDialog);
+        pushButton_toexit->setObjectName(QString::fromUtf8("pushButton_toexit"));
+        pushButton_toexit->setGeometry(QRect(240, 190, 101, 71));
+        pushButton_toexit->setStyleSheet(QString::fromUtf8("border-radius:7px;\n"
+"border:1px solid grey;\n"
+"background:teal;\n"
+"color:white"));
 
         retranslateUi(CountwDialog);
 
@@ -40,6 +50,7 @@ public:
     void retranslateUi(QDialog *CountwDialog)
     {
         CountwDialog->setWindowTitle(QCoreApplication::translate("CountwDialog", "Dialog", nullptr));
+        pushButton_toexit->setText(QCoreApplication::translate("CountwDialog", "Done", nullptr));
     } // retranslateUi
 
 };

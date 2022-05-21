@@ -15,10 +15,15 @@ public:
     explicit TosaveDialog(QWidget *parent = nullptr);
     ~TosaveDialog();
 
+public:
+    explicit TosaveDialog(QString filename,QString fileoldcontent,QWidget *parent = nullptr);
+
 private slots:
     void on_pushButton_save_clicked();
 
 private:
+    QString myfilename;
+    QString myfilecontent;
     Ui::TosaveDialog *ui;
 };
 

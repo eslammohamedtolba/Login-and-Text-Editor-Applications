@@ -15,7 +15,14 @@ public:
     explicit CountwDialog(QWidget *parent = nullptr);
     ~CountwDialog();
 
+public:
+    explicit CountwDialog(QString file_name,QWidget *parent = nullptr);
+
+private slots:
+    void on_pushButton_toexit_clicked();
+
 private:
+    QString myfilename;
     void countwords();
     Ui::CountwDialog *ui;
 };

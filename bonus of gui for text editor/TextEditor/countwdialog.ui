@@ -28,6 +28,28 @@
      <height>41</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgb(255, 255, 255);</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_toexit">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>190</y>
+     <width>101</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius:7px;
+border:1px solid grey;
+background:teal;
+color:white</string>
+   </property>
+   <property name="text">
+    <string>Done</string>
+   </property>
   </widget>
  </widget>
  <resources/>

@@ -54,6 +54,23 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(1506, 765);
+        QPalette palette;
+        QBrush brush(QColor(255, 255, 255, 255));
+        brush.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Button, brush);
+        QBrush brush1(QColor(201, 101, 0, 255));
+        brush1.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Base, brush1);
+        palette.setBrush(QPalette::Active, QPalette::Window, brush1);
+        QBrush brush2(QColor(240, 240, 240, 255));
+        brush2.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Inactive, QPalette::Button, brush2);
+        palette.setBrush(QPalette::Inactive, QPalette::Base, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Window, brush2);
+        palette.setBrush(QPalette::Disabled, QPalette::Button, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::Base, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Window, brush1);
+        MainWindow->setPalette(palette);
         MainWindow->setStyleSheet(QString::fromUtf8("background:rgb(201,101,0);"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
@@ -177,7 +194,7 @@ public:
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
         label_filename = new QLabel(layoutWidget);
         label_filename->setObjectName(QString::fromUtf8("label_filename"));
-        label_filename->setStyleSheet(QString::fromUtf8("color:white;\n"
+        label_filename->setStyleSheet(QString::fromUtf8("color:black;\n"
 "font:10pt \"Century Gothic\";\n"
 ""));
 
@@ -185,7 +202,8 @@ public:
 
         lineEdit_filename = new QLineEdit(layoutWidget);
         lineEdit_filename->setObjectName(QString::fromUtf8("lineEdit_filename"));
-        lineEdit_filename->setStyleSheet(QString::fromUtf8(""));
+        lineEdit_filename->setStyleSheet(QString::fromUtf8("background:rgb(255, 255, 255);\n"
+"font:black;"));
 
         horizontalLayout->addWidget(lineEdit_filename);
 

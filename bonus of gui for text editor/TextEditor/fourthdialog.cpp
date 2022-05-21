@@ -5,11 +5,13 @@
 #include <QTextStream>
 #include <QFileDialog>
 #include "QMessageBox"
+
 FourthDialog::FourthDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::FourthDialog)
 {
     ui->setupUi(this);
+    setWindowTitle("Merge two files");
 }
 
 FourthDialog::~FourthDialog()
@@ -17,13 +19,14 @@ FourthDialog::~FourthDialog()
     delete ui;
 }
 
+FourthDialog::FourthDialog(QString file_name,QWidget *parent) :FourthDialog(parent)
+{
+    myfilename=file_name;
+}
+
 void FourthDialog::on_pushButton_merge_clicked()
 {
-    //QString file_name=ui->lineEdit_filename->text();
-    QString filter="all text files (*.txt)";
-    QString file_name=QFileDialog::getOpenFileName(this,"open a first file","C://",filter);
-    QFile file1(file_name);
-
+    QFile file1(myfilename);
     if(!file1.open(QFile::ReadOnly | QFile::Text)){
         qCritical()<<"the first file not exit, I created it for you";
         qCritical()<<file1.errorString();
@@ -37,8 +40,8 @@ void FourthDialog::on_pushButton_merge_clicked()
         filecontent1.push_back('\n');
     }
     file1.close();
-    //QFile file2(ui->lineEdit_merge->text()+".txt");
-    QFile file2(QFileDialog::getOpenFileName(this,"open a second file","C://",filter));
+    QString filename2=ui->lineEdit_second->text()+".txt";
+    QFile file2(filename2);
     if(!file2.open(QFile::ReadOnly | QFile::Text)){
         qCritical()<<"the second file not exit, I created it for you";
         qCritical()<<file2.errorString();
@@ -51,8 +54,8 @@ void FourthDialog::on_pushButton_merge_clicked()
         filecontent2.push_back('\n');
     }
     file2.close();
-    //QFile file3(ui->lineEdit_namthirdfile->text()+".txt");
-    QFile file3(QFileDialog::getOpenFileName(this,"open a third file","C://",filter));
+    QString filename3=ui->lineEdit_namthirdfile->text()+".txt";
+    QFile file3(filename3);
     if(!file3.open(QFile::Append | QFile::Text)){
         qCritical()<<"the first file not exit, I created it for you";
         qCritical()<<file3.errorString();
@@ -63,4 +66,5 @@ void FourthDialog::on_pushButton_merge_clicked()
     out3<<filecontent2<<"\n";
     file3.flush();
     file3.close();
+    this->close();
 }

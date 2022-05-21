@@ -271,6 +271,12 @@
 			null
 		],
 		[
+			"C:/Users/hp/Downloads/Qt applications/applications/TextEditor/emptydialog.h",
+			"MU",
+			"EWIEGA46WW/moc_emptydialog.cpp",
+			null
+		],
+		[
 			"C:/Users/hp/Downloads/Qt applications/applications/TextEditor/fourthdialog.h",
 			"MU",
 			"EWIEGA46WW/moc_fourthdialog.cpp",
@@ -313,9 +319,39 @@
 			null
 		],
 		[
+			"C:/Users/hp/Downloads/Qt applications/applications/TextEditor/todecryptfile.h",
+			"MU",
+			"EWIEGA46WW/moc_todecryptfile.cpp",
+			null
+		],
+		[
+			"C:/Users/hp/Downloads/Qt applications/applications/TextEditor/toencryptfile.h",
+			"MU",
+			"EWIEGA46WW/moc_toencryptfile.cpp",
+			null
+		],
+		[
+			"C:/Users/hp/Downloads/Qt applications/applications/TextEditor/tofirstupper.h",
+			"MU",
+			"EWIEGA46WW/moc_tofirstupper.cpp",
+			null
+		],
+		[
+			"C:/Users/hp/Downloads/Qt applications/applications/TextEditor/tolowerwords.h",
+			"MU",
+			"EWIEGA46WW/moc_tolowerwords.cpp",
+			null
+		],
+		[
 			"C:/Users/hp/Downloads/Qt applications/applications/TextEditor/tosavedialog.h",
 			"MU",
 			"EWIEGA46WW/moc_tosavedialog.cpp",
+			null
+		],
+		[
+			"C:/Users/hp/Downloads/Qt applications/applications/TextEditor/toupperwords.h",
+			"MU",
+			"EWIEGA46WW/moc_toupperwords.cpp",
 			null
 		]
 	],
@@ -394,6 +430,11 @@
 			null
 		],
 		[
+			"C:/Users/hp/Downloads/Qt applications/applications/TextEditor/emptydialog.cpp",
+			"MU",
+			null
+		],
+		[
 			"C:/Users/hp/Downloads/Qt applications/applications/TextEditor/fourthdialog.cpp",
 			"MU",
 			null
@@ -434,7 +475,32 @@
 			null
 		],
 		[
+			"C:/Users/hp/Downloads/Qt applications/applications/TextEditor/todecryptfile.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/hp/Downloads/Qt applications/applications/TextEditor/toencryptfile.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/hp/Downloads/Qt applications/applications/TextEditor/tofirstupper.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/hp/Downloads/Qt applications/applications/TextEditor/tolowerwords.cpp",
+			"MU",
+			null
+		],
+		[
 			"C:/Users/hp/Downloads/Qt applications/applications/TextEditor/tosavedialog.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/hp/Downloads/Qt applications/applications/TextEditor/toupperwords.cpp",
 			"MU",
 			null
 		]

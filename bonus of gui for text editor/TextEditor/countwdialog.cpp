@@ -10,7 +10,7 @@ CountwDialog::CountwDialog(QWidget *parent) :
     ui(new Ui::CountwDialog)
 {
     ui->setupUi(this);
-    countwords();
+    setWindowTitle("Count file words");
 }
 
 CountwDialog::~CountwDialog()
@@ -18,12 +18,15 @@ CountwDialog::~CountwDialog()
     delete ui;
 }
 
+CountwDialog::CountwDialog(QString file_name,QWidget *parent) :CountwDialog()
+{
+    myfilename=file_name;
+    countwords();
+}
+
 void CountwDialog::countwords()
 {
-    //QString file_name=ui->lineEdit_filename->text();
-    QString filter="all text files (*.txt)";
-    QString file_name=QFileDialog::getOpenFileName(this,"open a first file","C://",filter);
-    QFile file(file_name);
+    QFile file(myfilename);
     if(!file.open(QFile::ReadOnly | QFile::Text)){
         qCritical()<<"the first file not exit, I created it for you";
         qCritical()<<file.errorString();
@@ -35,7 +38,7 @@ void CountwDialog::countwords()
             QString line = out.readLine();
             if(!line.isEmpty()){
                 QStringList words = line.split(" ");
-                foreach(QString word, words){
+                foreach(word, words){
                    countwords++;
                 }
             }
@@ -43,3 +46,9 @@ void CountwDialog::countwords()
     ui->lineEdit_countwords->setText("the words in file are "+QString::number(countwords));
     file.close();
 }
+
+void CountwDialog::on_pushButton_toexit_clicked()
+{
+    this->close();
+}
+

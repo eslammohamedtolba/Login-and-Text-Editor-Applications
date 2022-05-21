@@ -10,6 +10,12 @@
 #include "repeatwdialog.h"
 #include "countwdialog.h"
 #include "tosavedialog.h"
+#include "emptydialog.h"
+#include "tofirstupper.h"
+#include "toupperwords.h"
+#include "tolowerwords.h"
+#include "toencryptfile.h"
+#include "todecryptfile.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -19,6 +25,8 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+    QString file_name;
+    QString fileoldcontent;
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     //here are the global variables declared
@@ -69,5 +77,11 @@ private:
     RepeatwDialog *repeatworddia;
     CountwDialog *countwordsdia;
     TosaveDialog *tosavefile;
+    EmptyDialog *emptyfile;
+    Tofirstupper *firsttoupper;
+    Toupperwords *toupperwords;
+    Tolowerwords *tolowerwords;
+    Toencryptfile *toencryptfile;
+    Todecryptfile *todecryptfile;
 };
 #endif // MAINWINDOW_H

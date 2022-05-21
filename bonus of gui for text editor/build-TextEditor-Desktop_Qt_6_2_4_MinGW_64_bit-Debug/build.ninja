@@ -145,6 +145,54 @@ build CMakeFiles/TextEditor.dir/tosavedialog.cpp.obj: CXX_COMPILER__TextEditor_D
   OBJECT_DIR = CMakeFiles\TextEditor.dir
   OBJECT_FILE_DIR = CMakeFiles\TextEditor.dir
 
+build CMakeFiles/TextEditor.dir/emptydialog.cpp.obj: CXX_COMPILER__TextEditor_Debug C$:/Users/hp/Downloads/Qt$ applications/applications/TextEditor/emptydialog.cpp || cmake_object_order_depends_target_TextEditor
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\TextEditor.dir\emptydialog.cpp.obj.d
+  FLAGS = -g -std=gnu++17
+  INCLUDES = -I"C:/Users/hp/Downloads/Qt applications/applications/build-TextEditor-Desktop_Qt_6_2_4_MinGW_64_bit-Debug" -I"C:/Users/hp/Downloads/Qt applications/applications/TextEditor" -I"C:/Users/hp/Downloads/Qt applications/applications/build-TextEditor-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/TextEditor_autogen/include" -isystem C:/Qt/6.2.4/mingw_64/include/QtCore -isystem C:/Qt/6.2.4/mingw_64/include -isystem C:/Qt/6.2.4/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.2.4/mingw_64/include/QtWidgets -isystem C:/Qt/6.2.4/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\TextEditor.dir
+  OBJECT_FILE_DIR = CMakeFiles\TextEditor.dir
+
+build CMakeFiles/TextEditor.dir/tofirstupper.cpp.obj: CXX_COMPILER__TextEditor_Debug C$:/Users/hp/Downloads/Qt$ applications/applications/TextEditor/tofirstupper.cpp || cmake_object_order_depends_target_TextEditor
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\TextEditor.dir\tofirstupper.cpp.obj.d
+  FLAGS = -g -std=gnu++17
+  INCLUDES = -I"C:/Users/hp/Downloads/Qt applications/applications/build-TextEditor-Desktop_Qt_6_2_4_MinGW_64_bit-Debug" -I"C:/Users/hp/Downloads/Qt applications/applications/TextEditor" -I"C:/Users/hp/Downloads/Qt applications/applications/build-TextEditor-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/TextEditor_autogen/include" -isystem C:/Qt/6.2.4/mingw_64/include/QtCore -isystem C:/Qt/6.2.4/mingw_64/include -isystem C:/Qt/6.2.4/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.2.4/mingw_64/include/QtWidgets -isystem C:/Qt/6.2.4/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\TextEditor.dir
+  OBJECT_FILE_DIR = CMakeFiles\TextEditor.dir
+
+build CMakeFiles/TextEditor.dir/toupperwords.cpp.obj: CXX_COMPILER__TextEditor_Debug C$:/Users/hp/Downloads/Qt$ applications/applications/TextEditor/toupperwords.cpp || cmake_object_order_depends_target_TextEditor
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\TextEditor.dir\toupperwords.cpp.obj.d
+  FLAGS = -g -std=gnu++17
+  INCLUDES = -I"C:/Users/hp/Downloads/Qt applications/applications/build-TextEditor-Desktop_Qt_6_2_4_MinGW_64_bit-Debug" -I"C:/Users/hp/Downloads/Qt applications/applications/TextEditor" -I"C:/Users/hp/Downloads/Qt applications/applications/build-TextEditor-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/TextEditor_autogen/include" -isystem C:/Qt/6.2.4/mingw_64/include/QtCore -isystem C:/Qt/6.2.4/mingw_64/include -isystem C:/Qt/6.2.4/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.2.4/mingw_64/include/QtWidgets -isystem C:/Qt/6.2.4/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\TextEditor.dir
+  OBJECT_FILE_DIR = CMakeFiles\TextEditor.dir
+
+build CMakeFiles/TextEditor.dir/tolowerwords.cpp.obj: CXX_COMPILER__TextEditor_Debug C$:/Users/hp/Downloads/Qt$ applications/applications/TextEditor/tolowerwords.cpp || cmake_object_order_depends_target_TextEditor
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\TextEditor.dir\tolowerwords.cpp.obj.d
+  FLAGS = -g -std=gnu++17
+  INCLUDES = -I"C:/Users/hp/Downloads/Qt applications/applications/build-TextEditor-Desktop_Qt_6_2_4_MinGW_64_bit-Debug" -I"C:/Users/hp/Downloads/Qt applications/applications/TextEditor" -I"C:/Users/hp/Downloads/Qt applications/applications/build-TextEditor-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/TextEditor_autogen/include" -isystem C:/Qt/6.2.4/mingw_64/include/QtCore -isystem C:/Qt/6.2.4/mingw_64/include -isystem C:/Qt/6.2.4/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.2.4/mingw_64/include/QtWidgets -isystem C:/Qt/6.2.4/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\TextEditor.dir
+  OBJECT_FILE_DIR = CMakeFiles\TextEditor.dir
+
+build CMakeFiles/TextEditor.dir/toencryptfile.cpp.obj: CXX_COMPILER__TextEditor_Debug C$:/Users/hp/Downloads/Qt$ applications/applications/TextEditor/toencryptfile.cpp || cmake_object_order_depends_target_TextEditor
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\TextEditor.dir\toencryptfile.cpp.obj.d
+  FLAGS = -g -std=gnu++17
+  INCLUDES = -I"C:/Users/hp/Downloads/Qt applications/applications/build-TextEditor-Desktop_Qt_6_2_4_MinGW_64_bit-Debug" -I"C:/Users/hp/Downloads/Qt applications/applications/TextEditor" -I"C:/Users/hp/Downloads/Qt applications/applications/build-TextEditor-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/TextEditor_autogen/include" -isystem C:/Qt/6.2.4/mingw_64/include/QtCore -isystem C:/Qt/6.2.4/mingw_64/include -isystem C:/Qt/6.2.4/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.2.4/mingw_64/include/QtWidgets -isystem C:/Qt/6.2.4/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\TextEditor.dir
+  OBJECT_FILE_DIR = CMakeFiles\TextEditor.dir
+
+build CMakeFiles/TextEditor.dir/todecryptfile.cpp.obj: CXX_COMPILER__TextEditor_Debug C$:/Users/hp/Downloads/Qt$ applications/applications/TextEditor/todecryptfile.cpp || cmake_object_order_depends_target_TextEditor
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\TextEditor.dir\todecryptfile.cpp.obj.d
+  FLAGS = -g -std=gnu++17
+  INCLUDES = -I"C:/Users/hp/Downloads/Qt applications/applications/build-TextEditor-Desktop_Qt_6_2_4_MinGW_64_bit-Debug" -I"C:/Users/hp/Downloads/Qt applications/applications/TextEditor" -I"C:/Users/hp/Downloads/Qt applications/applications/build-TextEditor-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/TextEditor_autogen/include" -isystem C:/Qt/6.2.4/mingw_64/include/QtCore -isystem C:/Qt/6.2.4/mingw_64/include -isystem C:/Qt/6.2.4/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.2.4/mingw_64/include/QtWidgets -isystem C:/Qt/6.2.4/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\TextEditor.dir
+  OBJECT_FILE_DIR = CMakeFiles\TextEditor.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target TextEditor
@@ -153,7 +201,7 @@ build CMakeFiles/TextEditor.dir/tosavedialog.cpp.obj: CXX_COMPILER__TextEditor_D
 #############################################
 # Link the executable TextEditor.exe
 
-build TextEditor.exe: CXX_EXECUTABLE_LINKER__TextEditor_Debug CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.obj CMakeFiles/TextEditor.dir/main.cpp.obj CMakeFiles/TextEditor.dir/mainwindow.cpp.obj CMakeFiles/TextEditor.dir/secdialog.cpp.obj CMakeFiles/TextEditor.dir/thirddialog.cpp.obj CMakeFiles/TextEditor.dir/fourthdialog.cpp.obj CMakeFiles/TextEditor.dir/searchdialog.cpp.obj CMakeFiles/TextEditor.dir/linesdialog.cpp.obj CMakeFiles/TextEditor.dir/charsdialog.cpp.obj CMakeFiles/TextEditor.dir/repeatwdialog.cpp.obj CMakeFiles/TextEditor.dir/countwdialog.cpp.obj CMakeFiles/TextEditor.dir/tosavedialog.cpp.obj | C$:/Qt/6.2.4/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.2.4/mingw_64/lib/libQt6Gui.a C$:/Qt/6.2.4/mingw_64/lib/libQt6Core.a C$:/Qt/6.2.4/mingw_64/lib/libQt6EntryPoint.a || TextEditor_autogen TextEditor_autogen_timestamp_deps
+build TextEditor.exe: CXX_EXECUTABLE_LINKER__TextEditor_Debug CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.obj CMakeFiles/TextEditor.dir/main.cpp.obj CMakeFiles/TextEditor.dir/mainwindow.cpp.obj CMakeFiles/TextEditor.dir/secdialog.cpp.obj CMakeFiles/TextEditor.dir/thirddialog.cpp.obj CMakeFiles/TextEditor.dir/fourthdialog.cpp.obj CMakeFiles/TextEditor.dir/searchdialog.cpp.obj CMakeFiles/TextEditor.dir/linesdialog.cpp.obj CMakeFiles/TextEditor.dir/charsdialog.cpp.obj CMakeFiles/TextEditor.dir/repeatwdialog.cpp.obj CMakeFiles/TextEditor.dir/countwdialog.cpp.obj CMakeFiles/TextEditor.dir/tosavedialog.cpp.obj CMakeFiles/TextEditor.dir/emptydialog.cpp.obj CMakeFiles/TextEditor.dir/tofirstupper.cpp.obj CMakeFiles/TextEditor.dir/toupperwords.cpp.obj CMakeFiles/TextEditor.dir/tolowerwords.cpp.obj CMakeFiles/TextEditor.dir/toencryptfile.cpp.obj CMakeFiles/TextEditor.dir/todecryptfile.cpp.obj | C$:/Qt/6.2.4/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.2.4/mingw_64/lib/libQt6Gui.a C$:/Qt/6.2.4/mingw_64/lib/libQt6Core.a C$:/Qt/6.2.4/mingw_64/lib/libQt6EntryPoint.a || TextEditor_autogen TextEditor_autogen_timestamp_deps
   FLAGS = -g
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = C:/Qt/6.2.4/mingw_64/lib/libQt6Widgets.a  C:/Qt/6.2.4/mingw_64/lib/libQt6Gui.a  C:/Qt/6.2.4/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lmingw32  C:/Qt/6.2.4/mingw_64/lib/libQt6EntryPoint.a  -lshell32  -ld3d11  -ldxgi  -ldxguid  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
@@ -198,7 +246,7 @@ build TextEditor_autogen_timestamp_deps: phony CMakeFiles/TextEditor_autogen_tim
 #############################################
 # Utility command for TextEditor_autogen
 
-build TextEditor_autogen: phony CMakeFiles/TextEditor_autogen TextEditor_autogen/include/ui_mainwindow.h TextEditor_autogen/include/ui_charsdialog.h TextEditor_autogen/include/ui_countwdialog.h TextEditor_autogen/include/ui_fourthdialog.h TextEditor_autogen/include/ui_linesdialog.h TextEditor_autogen/include/ui_repeatwdialog.h TextEditor_autogen/include/ui_searchdialog.h TextEditor_autogen/include/ui_secdialog.h TextEditor_autogen/include/ui_thirddialog.h TextEditor_autogen/include/ui_tosavedialog.h TextEditor_autogen/timestamp TextEditor_autogen/mocs_compilation.cpp TextEditor_autogen_timestamp_deps
+build TextEditor_autogen: phony CMakeFiles/TextEditor_autogen TextEditor_autogen/include/ui_mainwindow.h TextEditor_autogen/include/ui_charsdialog.h TextEditor_autogen/include/ui_countwdialog.h TextEditor_autogen/include/ui_emptydialog.h TextEditor_autogen/include/ui_fourthdialog.h TextEditor_autogen/include/ui_linesdialog.h TextEditor_autogen/include/ui_repeatwdialog.h TextEditor_autogen/include/ui_searchdialog.h TextEditor_autogen/include/ui_secdialog.h TextEditor_autogen/include/ui_thirddialog.h TextEditor_autogen/include/ui_todecryptfile.h TextEditor_autogen/include/ui_toencryptfile.h TextEditor_autogen/include/ui_tofirstupper.h TextEditor_autogen/include/ui_tolowerwords.h TextEditor_autogen/include/ui_tosavedialog.h TextEditor_autogen/include/ui_toupperwords.h TextEditor_autogen/timestamp TextEditor_autogen/mocs_compilation.cpp TextEditor_autogen_timestamp_deps
 
 
 #############################################
@@ -214,13 +262,13 @@ build TextEditor_autogen/timestamp TextEditor_autogen/mocs_compilation.cpp | ${c
 #############################################
 # Phony custom command for CMakeFiles\TextEditor_autogen_timestamp_deps
 
-build CMakeFiles/TextEditor_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/TextEditor_autogen_timestamp_deps: phony C$:/Qt/6.2.4/mingw_64/./bin/uic.exe C$:/Qt/6.2.4/mingw_64/./bin/moc.exe C$:/Qt/6.2.4/mingw_64/bin/Qt6Core.dll C$:/Qt/6.2.4/mingw_64/bin/Qt6Widgets.dll
+build CMakeFiles/TextEditor_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/TextEditor_autogen_timestamp_deps: phony C$:/Qt/6.2.4/mingw_64/./bin/uic.exe C$:/Qt/6.2.4/mingw_64/bin/Qt6Core.dll C$:/Qt/6.2.4/mingw_64/./bin/moc.exe C$:/Qt/6.2.4/mingw_64/bin/Qt6Widgets.dll
 
 
 #############################################
 # Phony custom command for CMakeFiles\TextEditor_autogen
 
-build CMakeFiles/TextEditor_autogen TextEditor_autogen/include/ui_mainwindow.h TextEditor_autogen/include/ui_charsdialog.h TextEditor_autogen/include/ui_countwdialog.h TextEditor_autogen/include/ui_fourthdialog.h TextEditor_autogen/include/ui_linesdialog.h TextEditor_autogen/include/ui_repeatwdialog.h TextEditor_autogen/include/ui_searchdialog.h TextEditor_autogen/include/ui_secdialog.h TextEditor_autogen/include/ui_thirddialog.h TextEditor_autogen/include/ui_tosavedialog.h | ${cmake_ninja_workdir}CMakeFiles/TextEditor_autogen ${cmake_ninja_workdir}TextEditor_autogen/include/ui_mainwindow.h ${cmake_ninja_workdir}TextEditor_autogen/include/ui_charsdialog.h ${cmake_ninja_workdir}TextEditor_autogen/include/ui_countwdialog.h ${cmake_ninja_workdir}TextEditor_autogen/include/ui_fourthdialog.h ${cmake_ninja_workdir}TextEditor_autogen/include/ui_linesdialog.h ${cmake_ninja_workdir}TextEditor_autogen/include/ui_repeatwdialog.h ${cmake_ninja_workdir}TextEditor_autogen/include/ui_searchdialog.h ${cmake_ninja_workdir}TextEditor_autogen/include/ui_secdialog.h ${cmake_ninja_workdir}TextEditor_autogen/include/ui_thirddialog.h ${cmake_ninja_workdir}TextEditor_autogen/include/ui_tosavedialog.h: phony TextEditor_autogen/timestamp || TextEditor_autogen_timestamp_deps
+build CMakeFiles/TextEditor_autogen TextEditor_autogen/include/ui_mainwindow.h TextEditor_autogen/include/ui_charsdialog.h TextEditor_autogen/include/ui_countwdialog.h TextEditor_autogen/include/ui_emptydialog.h TextEditor_autogen/include/ui_fourthdialog.h TextEditor_autogen/include/ui_linesdialog.h TextEditor_autogen/include/ui_repeatwdialog.h TextEditor_autogen/include/ui_searchdialog.h TextEditor_autogen/include/ui_secdialog.h TextEditor_autogen/include/ui_thirddialog.h TextEditor_autogen/include/ui_todecryptfile.h TextEditor_autogen/include/ui_toencryptfile.h TextEditor_autogen/include/ui_tofirstupper.h TextEditor_autogen/include/ui_tolowerwords.h TextEditor_autogen/include/ui_tosavedialog.h TextEditor_autogen/include/ui_toupperwords.h | ${cmake_ninja_workdir}CMakeFiles/TextEditor_autogen ${cmake_ninja_workdir}TextEditor_autogen/include/ui_mainwindow.h ${cmake_ninja_workdir}TextEditor_autogen/include/ui_charsdialog.h ${cmake_ninja_workdir}TextEditor_autogen/include/ui_countwdialog.h ${cmake_ninja_workdir}TextEditor_autogen/include/ui_emptydialog.h ${cmake_ninja_workdir}TextEditor_autogen/include/ui_fourthdialog.h ${cmake_ninja_workdir}TextEditor_autogen/include/ui_linesdialog.h ${cmake_ninja_workdir}TextEditor_autogen/include/ui_repeatwdialog.h ${cmake_ninja_workdir}TextEditor_autogen/include/ui_searchdialog.h ${cmake_ninja_workdir}TextEditor_autogen/include/ui_secdialog.h ${cmake_ninja_workdir}TextEditor_autogen/include/ui_thirddialog.h ${cmake_ninja_workdir}TextEditor_autogen/include/ui_todecryptfile.h ${cmake_ninja_workdir}TextEditor_autogen/include/ui_toencryptfile.h ${cmake_ninja_workdir}TextEditor_autogen/include/ui_tofirstupper.h ${cmake_ninja_workdir}TextEditor_autogen/include/ui_tolowerwords.h ${cmake_ninja_workdir}TextEditor_autogen/include/ui_tosavedialog.h ${cmake_ninja_workdir}TextEditor_autogen/include/ui_toupperwords.h: phony TextEditor_autogen/timestamp || TextEditor_autogen_timestamp_deps
 
 # =============================================================================
 # Target aliases.

@@ -32,6 +32,7 @@ public:
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_2;
     QLineEdit *lineEdit_repetitionword;
+    QPushButton *pushButton_toexit;
 
     void setupUi(QDialog *SearchDialog)
     {
@@ -41,14 +42,14 @@ public:
         SearchDialog->setStyleSheet(QString::fromUtf8("background:rgb(201,101,0);"));
         pushButton_search = new QPushButton(SearchDialog);
         pushButton_search->setObjectName(QString::fromUtf8("pushButton_search"));
-        pushButton_search->setGeometry(QRect(130, 120, 201, 61));
+        pushButton_search->setGeometry(QRect(340, 40, 201, 61));
         pushButton_search->setStyleSheet(QString::fromUtf8("border-radius:7px;\n"
 "border:1px solid grey;\n"
 "background:teal;\n"
 "color:white"));
         layoutWidget = new QWidget(SearchDialog);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(70, 60, 305, 24));
+        layoutWidget->setGeometry(QRect(20, 60, 305, 24));
         horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
@@ -59,12 +60,13 @@ public:
 
         lineEdit_search = new QLineEdit(layoutWidget);
         lineEdit_search->setObjectName(QString::fromUtf8("lineEdit_search"));
+        lineEdit_search->setStyleSheet(QString::fromUtf8("background:rgb(255, 255, 255);"));
 
         horizontalLayout->addWidget(lineEdit_search);
 
         layoutWidget1 = new QWidget(SearchDialog);
         layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(70, 240, 311, 24));
+        layoutWidget1->setGeometry(QRect(100, 130, 311, 24));
         horizontalLayout_2 = new QHBoxLayout(layoutWidget1);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -76,9 +78,17 @@ public:
         lineEdit_repetitionword = new QLineEdit(layoutWidget1);
         lineEdit_repetitionword->setObjectName(QString::fromUtf8("lineEdit_repetitionword"));
         lineEdit_repetitionword->setEnabled(false);
+        lineEdit_repetitionword->setStyleSheet(QString::fromUtf8("background:rgb(255, 255, 255);"));
 
         horizontalLayout_2->addWidget(lineEdit_repetitionword);
 
+        pushButton_toexit = new QPushButton(SearchDialog);
+        pushButton_toexit->setObjectName(QString::fromUtf8("pushButton_toexit"));
+        pushButton_toexit->setGeometry(QRect(190, 180, 101, 71));
+        pushButton_toexit->setStyleSheet(QString::fromUtf8("border-radius:7px;\n"
+"border:1px solid grey;\n"
+"background:teal;\n"
+"color:white"));
 
         retranslateUi(SearchDialog);
 
@@ -90,7 +100,8 @@ public:
         SearchDialog->setWindowTitle(QCoreApplication::translate("SearchDialog", "Dialog", nullptr));
         pushButton_search->setText(QCoreApplication::translate("SearchDialog", "push to search", nullptr));
         label->setText(QCoreApplication::translate("SearchDialog", "Please enter the word ", nullptr));
-        label_2->setText(QCoreApplication::translate("SearchDialog", "Repetition", nullptr));
+        label_2->setText(QCoreApplication::translate("SearchDialog", "existing", nullptr));
+        pushButton_toexit->setText(QCoreApplication::translate("SearchDialog", "Done", nullptr));
     } // retranslateUi
 
 };

@@ -31,12 +31,14 @@ public:
         if (SecDialog->objectName().isEmpty())
             SecDialog->setObjectName(QString::fromUtf8("SecDialog"));
         SecDialog->resize(764, 576);
+        SecDialog->setStyleSheet(QString::fromUtf8("background:rgb(255, 170, 255);"));
         verticalLayout_2 = new QVBoxLayout(SecDialog);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         plainTextEdit_Write = new QPlainTextEdit(SecDialog);
         plainTextEdit_Write->setObjectName(QString::fromUtf8("plainTextEdit_Write"));
+        plainTextEdit_Write->setStyleSheet(QString::fromUtf8("background:rgb(255, 255, 255);"));
 
         verticalLayout->addWidget(plainTextEdit_Write);
 

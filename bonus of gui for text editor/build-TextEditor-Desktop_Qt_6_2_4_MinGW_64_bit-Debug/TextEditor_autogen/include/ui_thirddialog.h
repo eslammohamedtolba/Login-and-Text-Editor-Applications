@@ -31,6 +31,7 @@ public:
         if (ThirdDialog->objectName().isEmpty())
             ThirdDialog->setObjectName(QString::fromUtf8("ThirdDialog"));
         ThirdDialog->resize(663, 478);
+        ThirdDialog->setStyleSheet(QString::fromUtf8("background:rgb(255, 170, 255);"));
         verticalLayout_2 = new QVBoxLayout(ThirdDialog);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         verticalLayout = new QVBoxLayout();
@@ -38,6 +39,7 @@ public:
         plainTextEdit_Read = new QPlainTextEdit(ThirdDialog);
         plainTextEdit_Read->setObjectName(QString::fromUtf8("plainTextEdit_Read"));
         plainTextEdit_Read->setEnabled(false);
+        plainTextEdit_Read->setStyleSheet(QString::fromUtf8("background:rgb(255, 255, 255);"));
 
         verticalLayout->addWidget(plainTextEdit_Read);
 

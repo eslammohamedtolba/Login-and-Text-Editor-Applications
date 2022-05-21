@@ -11,6 +11,7 @@ RepeatwDialog::RepeatwDialog(QWidget *parent) :
     ui(new Ui::RepeatwDialog)
 {
     ui->setupUi(this);
+    setWindowTitle("Count word repetition");
 }
 
 RepeatwDialog::~RepeatwDialog()
@@ -18,13 +19,15 @@ RepeatwDialog::~RepeatwDialog()
     delete ui;
 }
 
+RepeatwDialog::RepeatwDialog(QString file_name,QWidget *parent) :RepeatwDialog(parent)
+{
+    myfilename=file_name;
+}
+
 void RepeatwDialog::on_pushButton_repeatword_clicked()
 {
-    //QString filee_name=ui->lineEdit_filename->text();
     QString wordsearch=ui->lineEdit_searchword->text().toLower();
-    QString filter="all text files (*.txt)";
-    QString file_name=QFileDialog::getOpenFileName(this,"open a first file","C://",filter);
-    QFile file(file_name);
+    QFile file(myfilename);
     if(!file.open(QFile::ReadOnly | QFile::Text)){
         qCritical()<<"the first file not exit, I created it for you";
         qCritical()<<file.errorString();
@@ -45,5 +48,11 @@ void RepeatwDialog::on_pushButton_repeatword_clicked()
     }
     ui->lineEdit_repeatword->setText("the words in file are "+QString::number(repeatword));
     file.close();
+}
+
+
+void RepeatwDialog::on_pushButton_toexit_clicked()
+{
+    this->close();
 }
 

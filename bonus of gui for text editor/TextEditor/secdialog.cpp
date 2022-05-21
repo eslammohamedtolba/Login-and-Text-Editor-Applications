@@ -9,6 +9,7 @@ SecDialog::SecDialog(QWidget *parent) :
     ui(new Ui::SecDialog)
 {
     ui->setupUi(this);
+    setWindowTitle("Write in file");
 }
 
 SecDialog::~SecDialog()
@@ -16,13 +17,14 @@ SecDialog::~SecDialog()
     delete ui;
 }
 
+SecDialog::SecDialog(QString file_name,QWidget *parent) :SecDialog(parent)
+{
+    myfilename=file_name;
+}
+
 void SecDialog::on_pushButton_write_clicked()
 {
-    //QString file_name=ui->lineEdit_filename->text();
-    //Write
-    QString filter="all text files (*.txt)";
-    QString file_name=QFileDialog::getOpenFileName(this,"open a file","C://",filter);
-    QFile File(file_name);
+    QFile File(myfilename);
     if(!File.open(QFile::Append | QFile::Text)){
         QMessageBox::warning(this,"title","the file not open");
     }
@@ -31,5 +33,6 @@ void SecDialog::on_pushButton_write_clicked()
     out<<"\n"<<text;
     File.flush();
     File.close();
+    this->close();
 }
 

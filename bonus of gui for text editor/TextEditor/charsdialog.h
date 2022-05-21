@@ -15,7 +15,14 @@ public:
     explicit CharsDialog(QWidget *parent = nullptr);
     ~CharsDialog();
 
+public:
+    explicit CharsDialog(QString file_name,QWidget *parent = nullptr);
+
+private slots:
+    void on_pushButton_toexit_clicked();
+
 private:
+    QString myfilename;
     void countchars();
     Ui::CharsDialog *ui;
 };

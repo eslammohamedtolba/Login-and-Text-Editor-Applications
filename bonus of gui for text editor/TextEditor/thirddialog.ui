@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background:rgb(255, 170, 255);</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -20,6 +23,9 @@
       <widget class="QPlainTextEdit" name="plainTextEdit_Read">
        <property name="enabled">
         <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background:rgb(255, 255, 255);</string>
        </property>
       </widget>
      </item>

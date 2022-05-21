@@ -10,6 +10,7 @@ SearchDialog::SearchDialog(QWidget *parent) :
     ui(new Ui::SearchDialog)
 {
     ui->setupUi(this);
+    setWindowTitle("Search about word in file");
 }
 
 SearchDialog::~SearchDialog()
@@ -17,12 +18,15 @@ SearchDialog::~SearchDialog()
     delete ui;
 }
 
+SearchDialog::SearchDialog(QString file_name,QWidget *parent):SearchDialog(parent)
+{
+    myfilename=file_name;
+}
+
+
 void SearchDialog::on_pushButton_search_clicked()
 {
-    //QString fileee_name=ui->lineEdit_filename->text();
-    QString filter="all text files (*.txt)";
-    QString file_name=QFileDialog::getOpenFileName(this,"open a first file","C://",filter);
-    QFile file(file_name);
+    QFile file(myfilename);
     if(!file.open(QFile::ReadOnly | QFile::Text)){
         qCritical()<<"the first file not exit, I created it for you";
         qCritical()<<file.errorString();
@@ -44,5 +48,11 @@ void SearchDialog::on_pushButton_search_clicked()
         ui->lineEdit_repetitionword->setText("the word "+ui->lineEdit_search->text()+" isn't exist ");
     }
     file.close();
+}
+
+
+void SearchDialog::on_pushButton_toexit_clicked()
+{
+    this->close();
 }
 

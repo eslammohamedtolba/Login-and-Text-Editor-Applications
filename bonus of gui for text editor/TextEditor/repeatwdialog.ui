@@ -22,11 +22,14 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>200</y>
+     <x>90</x>
+     <y>150</y>
      <width>241</width>
      <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgb(255, 255, 255);</string>
    </property>
   </widget>
   <widget class="QWidget" name="layoutWidget">
@@ -47,15 +50,19 @@
      </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="lineEdit_searchword"/>
+     <widget class="QLineEdit" name="lineEdit_searchword">
+      <property name="styleSheet">
+       <string notr="true">background:rgb(255, 255, 255);</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
   <widget class="QPushButton" name="pushButton_repeatword">
    <property name="geometry">
     <rect>
-     <x>190</x>
-     <y>110</y>
+     <x>390</x>
+     <y>50</y>
      <width>111</width>
      <height>61</height>
     </rect>
@@ -68,6 +75,25 @@ color:white</string>
    </property>
    <property name="text">
     <string>push to repeat</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_toexit">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>130</y>
+     <width>131</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius:7px;
+border:1px solid grey;
+background:teal;
+color:white</string>
+   </property>
+   <property name="text">
+    <string>Done</string>
    </property>
   </widget>
  </widget>

@@ -13,6 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QPushButton>
 
 QT_BEGIN_NAMESPACE
 
@@ -20,6 +21,7 @@ class Ui_CharsDialog
 {
 public:
     QLineEdit *lineEdit_countchars;
+    QPushButton *pushButton_toexit;
 
     void setupUi(QDialog *CharsDialog)
     {
@@ -31,6 +33,14 @@ public:
         lineEdit_countchars->setObjectName(QString::fromUtf8("lineEdit_countchars"));
         lineEdit_countchars->setEnabled(false);
         lineEdit_countchars->setGeometry(QRect(140, 130, 291, 41));
+        lineEdit_countchars->setStyleSheet(QString::fromUtf8("background:rgb(255, 255, 255);"));
+        pushButton_toexit = new QPushButton(CharsDialog);
+        pushButton_toexit->setObjectName(QString::fromUtf8("pushButton_toexit"));
+        pushButton_toexit->setGeometry(QRect(220, 240, 131, 71));
+        pushButton_toexit->setStyleSheet(QString::fromUtf8("border-radius:7px;\n"
+"border:1px solid grey;\n"
+"background:teal;\n"
+"color:white"));
 
         retranslateUi(CharsDialog);
 
@@ -40,6 +50,7 @@ public:
     void retranslateUi(QDialog *CharsDialog)
     {
         CharsDialog->setWindowTitle(QCoreApplication::translate("CharsDialog", "Dialog", nullptr));
+        pushButton_toexit->setText(QCoreApplication::translate("CharsDialog", "Done", nullptr));
     } // retranslateUi
 
 };

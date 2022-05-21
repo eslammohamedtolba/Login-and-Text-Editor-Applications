@@ -9,6 +9,7 @@ ThirdDialog::ThirdDialog(QWidget *parent) :
     ui(new Ui::ThirdDialog)
 {
     ui->setupUi(this);
+    setWindowTitle("Read from file");
 }
 
 ThirdDialog::~ThirdDialog()
@@ -16,12 +17,14 @@ ThirdDialog::~ThirdDialog()
     delete ui;
 }
 
+ThirdDialog::ThirdDialog(QString file_name,QWidget *parent) :ThirdDialog(parent)
+{
+    myfilename=file_name;
+}
+
 void ThirdDialog::on_pushButton_read_clicked()
 {
-    //QString file_name=ui->lineEdit_filename->text();
-    QString filter="all text files (*.txt)";
-    QString file_name=QFileDialog::getOpenFileName(this,"open a file","C://",filter);// QDir::homepath() ->include<QDir>
-    QFile File(file_name);
+    QFile File(myfilename);
     if(!File.open(QFile::ReadOnly | QFile::Text)){
         QMessageBox::warning(this,"title","the file not open");
     }

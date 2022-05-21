@@ -15,10 +15,14 @@ public:
     explicit FourthDialog(QWidget *parent = nullptr);
     ~FourthDialog();
 
+public:
+    explicit FourthDialog(QString file_name,QWidget *parent = nullptr);
+
 private slots:
     void on_pushButton_merge_clicked();
 
 private:
+    QString myfilename;
     Ui::FourthDialog *ui;
 };
 

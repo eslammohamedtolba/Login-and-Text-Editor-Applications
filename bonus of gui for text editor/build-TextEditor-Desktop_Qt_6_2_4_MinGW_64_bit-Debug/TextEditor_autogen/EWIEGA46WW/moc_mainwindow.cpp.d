@@ -316,10 +316,16 @@ C:/Users/hp/Downloads/Qt\ applications/applications/build-TextEditor-Desktop_Qt_
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wctype.h \
   C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/charsdialog.h \
   C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/countwdialog.h \
+  C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/emptydialog.h \
   C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/fourthdialog.h \
   C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/linesdialog.h \
   C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/repeatwdialog.h \
   C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/searchdialog.h \
   C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/secdialog.h \
   C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/thirddialog.h \
-  C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/tosavedialog.h
+  C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/todecryptfile.h \
+  C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/toencryptfile.h \
+  C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/tofirstupper.h \
+  C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/tolowerwords.h \
+  C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/tosavedialog.h \
+  C:/Users/hp/Downloads/Qt\ applications/applications/TextEditor/toupperwords.h

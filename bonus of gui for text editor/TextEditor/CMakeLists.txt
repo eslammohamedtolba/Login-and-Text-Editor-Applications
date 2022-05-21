@@ -46,6 +46,24 @@ set(PROJECT_SOURCES
         tosavedialog.cpp
         tosavedialog.h
         tosavedialog.ui
+        emptydialog.cpp
+        emptydialog.h
+        emptydialog.ui
+        tofirstupper.cpp
+        tofirstupper.h
+        tofirstupper.ui
+        toupperwords.cpp
+        toupperwords.h
+        toupperwords.ui
+        tolowerwords.cpp
+        tolowerwords.h
+        tolowerwords.ui
+        toencryptfile.cpp
+        toencryptfile.h
+        toencryptfile.ui
+        todecryptfile.cpp
+        todecryptfile.h
+        todecryptfile.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

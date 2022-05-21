@@ -15,7 +15,14 @@ public:
     explicit LinesDialog(QWidget *parent = nullptr);
     ~LinesDialog();
 
+public:
+    explicit LinesDialog(QString file_name,QWidget *parent = nullptr);
+
+private slots:
+    void on_pushButton_toexit_clicked();
+
 private:
+    QString myfilename;
     void countlines();
     Ui::LinesDialog *ui;
 };

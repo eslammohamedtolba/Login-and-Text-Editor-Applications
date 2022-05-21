@@ -43,8 +43,9 @@ public:
         radioButton_different->setGeometry(QRect(130, 180, 161, 20));
         lineEdit_save = new QLineEdit(TosaveDialog);
         lineEdit_save->setObjectName(QString::fromUtf8("lineEdit_save"));
-        lineEdit_save->setEnabled(false);
+        lineEdit_save->setEnabled(true);
         lineEdit_save->setGeometry(QRect(160, 210, 113, 22));
+        lineEdit_save->setStyleSheet(QString::fromUtf8("background:rgb(255, 255, 255);"));
         label = new QLabel(TosaveDialog);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(10, 210, 141, 20));
